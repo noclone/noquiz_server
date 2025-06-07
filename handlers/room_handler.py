@@ -4,7 +4,7 @@ from uuid import uuid4
 from database.room import Room
 
 
-class RoomManager:
+class RoomHandler:
     def __init__(self):
         self.rooms: Dict[str, Room] = {}
 

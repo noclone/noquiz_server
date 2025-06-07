@@ -6,7 +6,8 @@ from uuid import uuid4
 
 from database.player import Player
 from database.room import Room
-from managers.room_manager import RoomManager
+from handlers.message_handler import MessageHandler
+from handlers.room_handler import RoomHandler
 
 app = FastAPI()
 
@@ -18,16 +19,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-room_manager = RoomManager()
+room_handler = RoomHandler()
+message_handler = MessageHandler()
 
 @app.post("/api/rooms/create")
 async def create_room():
-    room = room_manager.create_room()
+    room = room_handler.create_room()
     return room.get_state()
 
 @app.get("/api/rooms/{room_id}")
 async def get_room(room_id: str):
-    room = room_manager.get_room(room_id)
+    room = room_handler.get_room(room_id)
     if room:
         return room.get_state()
     raise HTTPException(status_code=404, detail="Room not found")
@@ -48,7 +50,7 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
         await websocket.close()
         return
 
-    room = room_manager.get_room(room_id)
+    room = room_handler.get_room(room_id)
     if not room:
         await websocket.close()
         return
@@ -60,11 +62,11 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
 
     try:
         room_state = room.get_state()
-        await broadcast_to_room(room, json.dumps(room_state))
+        await message_handler.broadcast_to_room(room, json.dumps(room_state))
 
         while True:
             data = await websocket.receive_text()
-            await broadcast_to_room(room, data)
+            await message_handler.handle_message(data, player, room)
     except WebSocketDisconnect:
         if room.admin is not None and room.admin.id == player.id:
             room.admin = None
@@ -72,22 +74,11 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
             room.remove_player(player.id)
 
         if room.admin is None:
-            await broadcast_to_room(room, json.dumps({"room-deleted": True}))
-            room_manager.remove_room(room_id)
+            await message_handler.broadcast_to_room(room, json.dumps({"room-deleted": True}))
+            room_handler.remove_room(room_id)
         else:
             room_state = room.get_state()
-            await broadcast_to_room(room, json.dumps(room_state))
-
-async def broadcast_to_room(room: Room, message: str):
-    players = list(room.players.values())
-    if room.admin:
-        players.append(room.admin)
-
-    for player in players:
-        try:
-            await player.websocket.send_text(message)
-        except:
-            continue
+            await message_handler.broadcast_to_room(room, json.dumps(room_state))
 
 
 if __name__ == "__main__":
