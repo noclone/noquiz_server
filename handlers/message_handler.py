@@ -6,7 +6,8 @@ from database.room import Room
 
 class MessageHandler:
     async def handle_message(self, message, player, room):
-        if "buzz" in message:
+        data = json.loads(message)
+        if "buzz" in data.keys():
             await self.send_to_admin(room, json.dumps({"buzz": [player.name, time.time()]}))
         else:
             await self.broadcast_to_room(room, message)
