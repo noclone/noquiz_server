@@ -7,5 +7,14 @@ from fastapi import WebSocket
 class Player:
     id: str
     name: str
-    score: int
     websocket: WebSocket
+    score: int = 0
+    current_answer: str = ""
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "score": self.score,
+            "current_answer": self.current_answer
+        }

@@ -9,6 +9,8 @@ class MessageHandler:
         data = json.loads(message)
         if "buzz" in data.keys():
             await self.send_to_admin(room, json.dumps({"buzz": [player.name, time.time()]}))
+        if "answer" in data.keys():
+            player.current_answer = data["answer"]
         else:
             await self.broadcast_to_room(room, message)
 

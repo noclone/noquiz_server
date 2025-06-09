@@ -67,7 +67,6 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
             id=str(uuid4()),
             name=player_info.get("name", "Anonymous"),
             websocket=websocket,
-            score=0
         )
     except Exception:
         await websocket.close()

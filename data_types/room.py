@@ -33,6 +33,6 @@ class Room:
         return {
             "room_id": self.id,
             "player_count": len(self.players),
-            "players": [{"id": p.id, "name": p.name, "score": p.score} for p in self.players.values()],
+            "players": [p.to_dict() for p in self.players.values()],
             "admin": {"id": self.admin.id, "name": self.admin.name} if self.admin else None
         }
