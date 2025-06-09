@@ -4,9 +4,10 @@ import uvicorn
 import json
 from uuid import uuid4
 
-from database.player import Player
-from database.room import Room
+from data_types.player import Player
+from data_types.room import Room
 from handlers.message_handler import MessageHandler
+from handlers.questions_handler import QuestionsHandler
 from handlers.room_handler import RoomHandler
 
 app = FastAPI()
@@ -34,6 +35,14 @@ async def get_room(room_id: str):
         return room.get_state()
     raise HTTPException(status_code=404, detail="Room not found")
 
+@app.get("/api/rooms/{room_id}/questions/next")
+async def get_next_question(room_id: str):
+    room = room_handler.get_room(room_id)
+    question = room.questions_handler.get_next_question()
+    if question is None:
+        return {"end-of-questions": True}
+    return question.to_json()
+
 @app.websocket("/ws/{room_id}")
 async def websocket_endpoint(websocket: WebSocket, room_id: str):
     await websocket.accept()
@@ -57,6 +66,8 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
 
     if player_info.get("admin", False):
         room.set_admin(player)
+    elif player_info.get("display", False):
+        room.set_display(player)
     else:
         room.add_player(player)
 
@@ -70,6 +81,8 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
     except WebSocketDisconnect:
         if room.admin is not None and room.admin.id == player.id:
             room.admin = None
+        elif room.display is not None and room.display.id == player.id:
+            room.display = None
         else:
             room.remove_player(player.id)
 

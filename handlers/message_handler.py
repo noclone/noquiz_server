@@ -1,7 +1,7 @@
 import json
 import time
 
-from database.room import Room
+from data_types.room import Room
 
 
 class MessageHandler:
@@ -16,6 +16,8 @@ class MessageHandler:
         players = list(room.players.values())
         if room.admin:
             players.append(room.admin)
+        if room.display:
+            players.append(room.display)
 
         for player in players:
             try:
@@ -25,3 +27,6 @@ class MessageHandler:
 
     async def send_to_admin(self, room: Room, message: str):
         await room.admin.websocket.send_text(message)
+
+    async def send_to_display(self, room: Room, message: str):
+        await room.display.websocket.send_text(message)

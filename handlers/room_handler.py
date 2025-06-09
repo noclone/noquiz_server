@@ -1,7 +1,7 @@
 from typing import Dict, Optional
 from uuid import uuid4
 
-from database.room import Room
+from data_types.room import Room
 
 
 class RoomHandler:

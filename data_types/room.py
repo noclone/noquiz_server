@@ -1,6 +1,7 @@
 from typing import Dict
 
-from database.player import Player
+from data_types.player import Player
+from handlers.questions_handler import QuestionsHandler
 
 
 class Room:
@@ -8,6 +9,8 @@ class Room:
         self.id = room_id
         self.players: Dict[str, Player] = {}
         self.admin: Player | None = None
+        self.display: Player | None = None
+        self.questions_handler = QuestionsHandler()
 
     def add_player(self, player: Player):
         self.players[player.id] = player
@@ -18,6 +21,9 @@ class Room:
 
     def set_admin(self, admin: Player):
         self.admin = admin
+
+    def set_display(self, display: Player):
+        self.display = display
 
     def get_state(self):
         return {
