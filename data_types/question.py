@@ -11,6 +11,7 @@ class Question:
     question: str
     answer: str
     expected_answer_type: AnswerType
+    image: str = ""
 
     def to_json(self):
         question_dict = asdict(self)

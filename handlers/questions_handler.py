@@ -9,7 +9,15 @@ class QuestionsHandler:
         with open('data/questions.csv', mode='r', encoding='utf-8') as csvfile:
             reader = csv.reader(csvfile, delimiter=';')
             for row in reader:
-                self.questions.append(Question(len(self.questions), row[0], row[1], AnswerType(row[2])))
+                self.questions.append(
+                    Question(
+                        id=len(self.questions),
+                        question=row[0],
+                        answer=row[1],
+                        expected_answer_type=AnswerType(row[2]),
+                        image=row[3] if len(row) > 3 else "",
+                    )
+                )
 
     def get_question(self, question_id: int) -> Question:
         return self.questions[question_id]
