@@ -19,6 +19,10 @@ class Room:
         if player_id in self.players:
             del self.players[player_id]
 
+    def update_player_score(self, player_id: str, score: int):
+        if player_id in self.players:
+            self.players[player_id].score = score
+
     def set_admin(self, admin: Player):
         self.admin = admin
 
@@ -29,6 +33,6 @@ class Room:
         return {
             "room_id": self.id,
             "player_count": len(self.players),
-            "players": [{"id": p.id, "name": p.name} for p in self.players.values()],
+            "players": [{"id": p.id, "name": p.name, "score": p.score} for p in self.players.values()],
             "admin": {"id": self.admin.id, "name": self.admin.name} if self.admin else None
         }

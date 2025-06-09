@@ -1,13 +1,11 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import json
 from uuid import uuid4
 
 from data_types.player import Player
-from data_types.room import Room
 from handlers.message_handler import MessageHandler
-from handlers.questions_handler import QuestionsHandler
 from handlers.room_handler import RoomHandler
 
 app = FastAPI()
@@ -43,6 +41,21 @@ async def get_next_question(room_id: str):
         return {"end-of-questions": True}
     return question.to_json()
 
+@app.post("/api/rooms/{room_id}/player/score")
+async def update_player_score(room_id: str, request: Request):
+    body = await request.json()
+    player_id = body.get("player_id")
+    score = body.get("score")
+
+    if player_id is None or score is None:
+        raise HTTPException(status_code=400, detail="player_id and score are required")
+
+    room = room_handler.get_room(room_id)
+    if not room:
+        raise HTTPException(status_code=404, detail="Room not found")
+
+    room.update_player_score(player_id, score)
+
 @app.websocket("/ws/{room_id}")
 async def websocket_endpoint(websocket: WebSocket, room_id: str):
     await websocket.accept()
@@ -53,7 +66,8 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
         player = Player(
             id=str(uuid4()),
             name=player_info.get("name", "Anonymous"),
-            websocket=websocket
+            websocket=websocket,
+            score=0
         )
     except Exception:
         await websocket.close()
