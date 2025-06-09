@@ -41,6 +41,16 @@ async def get_next_question(room_id: str):
         return {"end-of-questions": True}
     return question.to_json()
 
+@app.get("/api/rooms/{room_id}/themes")
+async def get_themes(room_id: str):
+    room = room_handler.get_room(room_id)
+    return room.questions_handler.get_themes()
+
+@app.get("/api/rooms/{room_id}/themes/{theme}")
+async def get_themes(room_id: str, theme: str):
+    room = room_handler.get_room(room_id)
+    return [question.to_json() for question in room.questions_handler.get_theme_questions(theme)]
+
 @app.post("/api/rooms/{room_id}/player/score")
 async def update_player_score(room_id: str, request: Request):
     body = await request.json()
