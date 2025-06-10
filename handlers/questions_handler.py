@@ -37,6 +37,11 @@ class QuestionsHandler:
                             )
                         )
 
+        with open('data/right_order.json', 'r') as file:
+            data = json.load(file)
+            self.right_order = data
+            self.current_right_order = 0
+
 
     def get_next_question(self) -> Question | None:
         if self.current_question >= len(self.questions):
@@ -50,3 +55,10 @@ class QuestionsHandler:
 
     def get_theme_questions(self, theme):
         return self.themes[theme]
+
+    def get_next_right_order(self):
+        if self.current_right_order >= len(self.right_order):
+            return None
+        right_order = self.right_order[self.current_right_order]
+        self.current_right_order += 1
+        return right_order

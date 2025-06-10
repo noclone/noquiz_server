@@ -41,6 +41,14 @@ async def get_next_question(room_id: str):
         return {"end-of-questions": True}
     return question.to_json()
 
+@app.get("/api/rooms/{room_id}/right-order/next")
+async def get_next_right_order(room_id: str):
+    room = room_handler.get_room(room_id)
+    right_order = room.questions_handler.get_next_right_order()
+    if right_order is None:
+        return {"end-of-right-order": True}
+    return right_order
+
 @app.get("/api/rooms/{room_id}/themes")
 async def get_themes(room_id: str):
     room = room_handler.get_room(room_id)

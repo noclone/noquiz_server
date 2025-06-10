@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Classez ces animaux du moins au plus gros dormeur",
+    "data": [
+      ["https://upload.wikimedia.org/wikipedia/commons/e/e0/Giraffa_camelopardalis_angolensis.jpg", "4h/jour"],
+      ["https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", "6h/jour"],
+      ["https://gcdn.thunderstore.io/live/repository/icons/SRR8-Pack_for_the_bois-1.0.1.png.128x128_q95.png", "7h/jour"],
+      ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg", "14h/jour"],
+      ["https://upload.wikimedia.org/wikipedia/commons/4/49/Koala_climbing_tree.jpg", "19h/jour"]
+    ]
+  },
+  {
+    "title": "Classez ces moyens de transport du moins dangereux au plus dangereux",
+    "data": [
+      ["https://www.devispro.com/wp-content/uploads/2019/09/ascensur-hydraulique-electrique.jpg", "1/10M"],
+      ["https://img.static-af.com/transform/e56219e9-21c7-4bb0-b7a5-f5353a5140d3/", "1/3M"],
+      ["https://leshorizons.net/wp-content/uploads/2022/12/VIsuelTrain.jpeg", "1/2M"],
+      ["https://image.elite-auto.fr/visuel/RENAULT/peintures/600x400/renault_24australhteknoesprtalpnsu1bfr_blancnacretoitnoiretoile.png", "1/500k"],
+      ["https://media1.ledevoir.com/image/794165.jpg?ts=1688674335", "1/13"]
+    ]
+  }
+]
