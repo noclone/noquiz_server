@@ -33,13 +33,15 @@ async def get_room(room_id: str):
         return room.get_state()
     raise HTTPException(status_code=404, detail="Room not found")
 
-@app.get("/api/rooms/{room_id}/questions/next")
-async def get_next_question(room_id: str):
+@app.get("/api/rooms/{room_id}/questions_categories")
+async def get_questions_categories(room_id: str):
     room = room_handler.get_room(room_id)
-    question = room.questions_handler.get_next_question()
-    if question is None:
-        return {"end-of-questions": True}
-    return question.to_json()
+    return room.questions_handler.get_questions_categories()
+
+@app.get("/api/rooms/{room_id}/questions_categories/{category}")
+async def get_themes(room_id: str, category: str):
+    room = room_handler.get_room(room_id)
+    return [question.to_json() for question in room.questions_handler.get_category_questions(category)]
 
 @app.get("/api/rooms/{room_id}/right-order/next")
 async def get_next_right_order(room_id: str):
