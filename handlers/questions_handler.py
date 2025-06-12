@@ -43,7 +43,24 @@ class QuestionsHandler:
         with open('data/right_order.json', 'r') as file:
             data = json.load(file)
             self.right_order = data
-            self.current_right_order = 0
+
+        with open('data/board.json', mode='r', encoding='utf-8') as file:
+            board = json.load(file)
+            self.board = []
+            for question in board:
+                board_element = Question(
+                    id=len(self.board),
+                    question=question['question'],
+                    answer=question['answer'],
+                    expected_answer_type=AnswerType.NONE,
+                    images=question['images'],
+                ).to_json()
+                board_element['difficulty'] = question['difficulty']
+                board_element['thumbnail'] = question['thumbnail']
+                self.board.append(board_element)
+
+    def get_board(self):
+        return self.board
 
     def get_questions_categories(self):
         return list(self.questions_categories.keys())
@@ -57,9 +74,5 @@ class QuestionsHandler:
     def get_theme_questions(self, theme):
         return self.themes[theme]
 
-    def get_next_right_order(self):
-        if self.current_right_order >= len(self.right_order):
-            return None
-        right_order = self.right_order[self.current_right_order]
-        self.current_right_order += 1
-        return right_order
+    def get_right_order(self):
+        return self.right_order
