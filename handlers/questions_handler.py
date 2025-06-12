@@ -20,7 +20,7 @@ class QuestionsHandler:
                                 question=row[0],
                                 answer=row[1],
                                 expected_answer_type=AnswerType(row[2]),
-                                image=row[3] if len(row) > 3 else "",
+                                images=[image for image in row[3:]] if len(row) > 3 else [],
                             )
                         )
 
@@ -36,7 +36,7 @@ class QuestionsHandler:
                                 id=len(self.themes[theme]),
                                 question=row[0],
                                 answer=row[1],
-                                image=row[2] if len(row) > 2 else "",
+                                images=[image for image in row[2:]] if len(row) > 2 else [],
                             )
                         )
 

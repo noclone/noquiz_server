@@ -4,15 +4,14 @@ from enum import Enum
 class AnswerType(Enum):
     NONE = "NONE"
     NUMBER = "NUMBER"
-    QPUC = "QPUC"
 
 @dataclass
 class Question:
     id: int
     question: str
     answer: str
+    images: list[str]
     expected_answer_type: AnswerType = AnswerType.NONE
-    image: str = ""
 
     def to_json(self):
         question_dict = asdict(self)
