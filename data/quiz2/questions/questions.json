@@ -1,0 +1,7 @@
+{
+  "Basic": "questions.csv",
+  "QPUC": "qpuc.csv",
+  "Logos": "logos.csv",
+  "Similar Logos": "similar_logos.csv",
+  "Definitions": "definitions.csv"
+}

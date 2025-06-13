@@ -3,15 +3,17 @@ import json
 
 from data_types.question import Question, AnswerType
 
+selected_quiz = "quiz1"
+
 class QuestionsHandler:
     def __init__(self):
         self.questions_categories = []
 
-        with open('data/questions/questions.json', mode='r') as file:
+        with open(f'data/{selected_quiz}/questions/questions.json', mode='r') as file:
             data = json.load(file)
             self.questions_categories = {category: [] for category in data.keys()}
             for category in self.questions_categories:
-                with open("data/questions/" + data[category], mode='r', encoding='utf-8') as csvfile:
+                with open(f'data/{selected_quiz}/questions/' + data[category], mode='r', encoding='utf-8') as csvfile:
                     reader = csv.reader(csvfile, delimiter=';')
                     for row in reader:
                         self.questions_categories[category].append(
@@ -24,11 +26,11 @@ class QuestionsHandler:
                             )
                         )
 
-        with open('data/themes/themes.json', 'r') as file:
+        with open(f'data/{selected_quiz}/themes/themes.json', 'r') as file:
             data = json.load(file)
             self.themes = {theme: [] for theme in data.keys()}
             for theme in self.themes:
-                with open("data/themes/" + data[theme], mode='r', encoding='utf-8') as csvfile:
+                with open(f'data/{selected_quiz}/themes/' + data[theme], mode='r', encoding='utf-8') as csvfile:
                     reader = csv.reader(csvfile, delimiter=';')
                     for row in reader:
                         self.themes[theme].append(
@@ -40,11 +42,11 @@ class QuestionsHandler:
                             )
                         )
 
-        with open('data/right_order.json', mode='r', encoding='utf-8') as file:
+        with open(f'data/{selected_quiz}/right_order.json', mode='r', encoding='utf-8') as file:
             data = json.load(file)
             self.right_order = data
 
-        with open('data/board.json', mode='r', encoding='utf-8') as file:
+        with open(f'data/{selected_quiz}/board.json', mode='r', encoding='utf-8') as file:
             board = json.load(file)
             self.board = []
             for question in board:

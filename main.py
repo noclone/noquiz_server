@@ -90,13 +90,15 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
         init_data = await websocket.receive_text()
         player_info = json.loads(init_data)
         player = Player(
-            id=str(uuid4()),
+            id=player_info.get("id", str(uuid4()),),
             name=player_info.get("name", "Anonymous"),
             websocket=websocket,
         )
     except Exception:
         await websocket.close()
         return
+
+    await websocket.send_text(json.dumps({"initiated-player-id": player.id}))
 
     room = room_handler.get_room(room_id)
     if not room:

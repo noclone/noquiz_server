@@ -22,10 +22,10 @@
   {
     "title": "Classez ces sagas en fonction du nombre de films",
     "data": [
-      ["https://i.ebayimg.com/images/g/v7AAAOSwstxVCESm/s-l1200.jpg", "Fast & Furious", "10"],
-      ["https://images.affiches-et-posters.com//albums/3/4651/medium/affiche-film-saw-2465.jpg", "Saw", "9"],
-      ["https://fr.web.img6.acsta.net/c_310_420/pictures/14/03/04/14/58/474265.jpg", "Qu’est ce qu’on a fait au bon dieu", "3"],
       ["https://media.posterlounge.com/img/products/710000/706502/706502_poster.jpg", "Blade Runner", "2"],
+      ["https://fr.web.img6.acsta.net/c_310_420/pictures/14/03/04/14/58/474265.jpg", "Qu’est ce qu’on a fait au bon dieu", "3"],
+      ["https://images.affiches-et-posters.com//albums/3/4651/medium/affiche-film-saw-2465.jpg", "Saw", "9"],
+      ["https://i.ebayimg.com/images/g/v7AAAOSwstxVCESm/s-l1200.jpg", "Fast & Furious", "10"],
       ["https://static.posters.cz/image/750/19234.jpg", "Godzilla", "+30"]
     ]
   },
@@ -33,9 +33,9 @@
     "title": "Classez minerais en fonction de leurs prix au kilo",
     "data": [
       ["https://media.istockphoto.com/id/918829382/fr/photo/le-minerai-de-fer-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=xFmf4hKoCIZC4Q-SkYgFxbki1lHl37MYJDWqF51eKAk=", "Fer", "0.2€/kg"],
+      ["https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg", "Cuivre", "8€/kg"],
       ["https://i0.wp.com/geologyscience.com/wp-content/uploads/2019/06/Silver.png?fit=500%2C363&ssl=1", "Argent", "898€/kg"],
       ["https://i0.wp.com/geologyscience.com/wp-content/uploads/2023/10/Platinum-2-jpg.webp?fit=1280%2C886&ssl=1", "Platine", "29418€/kg"],
-      ["https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg", "Cuivre", "8€/kg"],
       ["https://media.istockphoto.com/id/487174613/fr/photo/p%C3%A9pite-dor-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=lYIZai7TJ-qygZ5oRCIaGGTiSgZkPt2d2GhisKZQrIs=", "Or", "68997€/kg"]
     ]
   }
