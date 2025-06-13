@@ -48,12 +48,12 @@ async def get_questions_categories(room_id: str):
     return room.questions_handler.get_questions_categories()
 
 @app.get("/api/rooms/{room_id}/questions_categories/{category}")
-async def get_themes(room_id: str, category: str):
+async def get_category_questions(room_id: str, category: str):
     room = room_handler.get_room(room_id)
     return [question.to_json() for question in room.questions_handler.get_category_questions(category)]
 
 @app.get("/api/rooms/{room_id}/right-order")
-async def get_next_right_order(room_id: str):
+async def get_right_order(room_id: str):
     room = room_handler.get_room(room_id)
     return room.questions_handler.get_right_order()
 
@@ -63,7 +63,7 @@ async def get_themes(room_id: str):
     return room.questions_handler.get_themes()
 
 @app.get("/api/rooms/{room_id}/themes/{theme}")
-async def get_themes(room_id: str, theme: str):
+async def get_theme_questions(room_id: str, theme: str):
     room = room_handler.get_room(room_id)
     return [question.to_json() for question in room.questions_handler.get_theme_questions(theme)]
 
