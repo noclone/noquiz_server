@@ -20,3 +20,6 @@ class RoomHandler:
     def remove_room(self, room_id: str):
         if room_id in self.rooms:
             del self.rooms[room_id]
+
+    def get_rooms(self):
+        return [room.id for room in self.rooms.values()]

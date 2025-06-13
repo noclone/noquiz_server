@@ -26,6 +26,10 @@ async def create_room():
     room = room_handler.create_room()
     return room.get_state()
 
+@app.get("/api/rooms")
+async def get_rooms():
+    return room_handler.get_rooms()
+
 @app.get("/api/rooms/{room_id}")
 async def get_room(room_id: str):
     room = room_handler.get_room(room_id)
