@@ -2,21 +2,41 @@
   {
     "title": "Classez ces animaux du moins au plus gros dormeur",
     "data": [
-      ["https://upload.wikimedia.org/wikipedia/commons/e/e0/Giraffa_camelopardalis_angolensis.jpg", "4h/jour"],
-      ["https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", "6h/jour"],
-      ["https://gcdn.thunderstore.io/live/repository/icons/SRR8-Pack_for_the_bois-1.0.1.png.128x128_q95.png", "7h/jour"],
-      ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg", "14h/jour"],
-      ["https://upload.wikimedia.org/wikipedia/commons/4/49/Koala_climbing_tree.jpg", "19h/jour"]
+      ["https://upload.wikimedia.org/wikipedia/commons/e/e0/Giraffa_camelopardalis_angolensis.jpg", "Girafe","4h/jour"],
+      ["https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", "Elephant","6h/jour"],
+      ["https://gcdn.thunderstore.io/live/repository/icons/SRR8-Pack_for_the_bois-1.0.1.png.128x128_q95.png", "Humain","7h/jour"],
+      ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg", "Chat","14h/jour"],
+      ["https://upload.wikimedia.org/wikipedia/commons/4/49/Koala_climbing_tree.jpg", "Koala","19h/jour"]
     ]
   },
   {
     "title": "Classez ces moyens de transport du moins dangereux au plus dangereux",
     "data": [
-      ["https://www.devispro.com/wp-content/uploads/2019/09/ascensur-hydraulique-electrique.jpg", "1/10M"],
-      ["https://img.static-af.com/transform/e56219e9-21c7-4bb0-b7a5-f5353a5140d3/", "1/3M"],
-      ["https://leshorizons.net/wp-content/uploads/2022/12/VIsuelTrain.jpeg", "1/2M"],
-      ["https://image.elite-auto.fr/visuel/RENAULT/peintures/600x400/renault_24australhteknoesprtalpnsu1bfr_blancnacretoitnoiretoile.png", "1/500k"],
-      ["https://media1.ledevoir.com/image/794165.jpg?ts=1688674335", "1/13"]
+      ["https://www.devispro.com/wp-content/uploads/2019/09/ascensur-hydraulique-electrique.jpg", "Ascenseur","1/10M"],
+      ["https://img.static-af.com/transform/e56219e9-21c7-4bb0-b7a5-f5353a5140d3/", "Avion","1/3M"],
+      ["https://leshorizons.net/wp-content/uploads/2022/12/VIsuelTrain.jpeg", "Train","1/2M"],
+      ["https://image.elite-auto.fr/visuel/RENAULT/peintures/600x400/renault_24australhteknoesprtalpnsu1bfr_blancnacretoitnoiretoile.png", "Voiture","1/500k"],
+      ["https://media1.ledevoir.com/image/794165.jpg?ts=1688674335", "Sous-marin OceanGate","1/13"]
+    ]
+  },
+  {
+    "title": "Classez ces sagas en fonction du nombre de films",
+    "data": [
+      ["https://i.ebayimg.com/images/g/v7AAAOSwstxVCESm/s-l1200.jpg", "Fast & Furious", "10"],
+      ["https://images.affiches-et-posters.com//albums/3/4651/medium/affiche-film-saw-2465.jpg", "Saw", "9"],
+      ["https://fr.web.img6.acsta.net/c_310_420/pictures/14/03/04/14/58/474265.jpg", "Qu’est ce qu’on a fait au bon dieu", "3"],
+      ["https://media.posterlounge.com/img/products/710000/706502/706502_poster.jpg", "Blade Runner", "2"],
+      ["https://static.posters.cz/image/750/19234.jpg", "Godzilla", "+30"]
+    ]
+  },
+  {
+    "title": "Classez minerais en fonction de leurs prix au kilo",
+    "data": [
+      ["https://media.istockphoto.com/id/918829382/fr/photo/le-minerai-de-fer-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=xFmf4hKoCIZC4Q-SkYgFxbki1lHl37MYJDWqF51eKAk=", "Fer", "0.2€/kg"],
+      ["https://i0.wp.com/geologyscience.com/wp-content/uploads/2019/06/Silver.png?fit=500%2C363&ssl=1", "Argent", "898€/kg"],
+      ["https://i0.wp.com/geologyscience.com/wp-content/uploads/2023/10/Platinum-2-jpg.webp?fit=1280%2C886&ssl=1", "Platine", "29418€/kg"],
+      ["https://upload.wikimedia.org/wikipedia/commons/f/f0/NatCopper.jpg", "Cuivre", "8€/kg"],
+      ["https://media.istockphoto.com/id/487174613/fr/photo/p%C3%A9pite-dor-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=lYIZai7TJ-qygZ5oRCIaGGTiSgZkPt2d2GhisKZQrIs=", "Or", "68997€/kg"]
     ]
   }
 ]

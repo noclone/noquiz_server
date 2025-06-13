@@ -40,7 +40,7 @@ class QuestionsHandler:
                             )
                         )
 
-        with open('data/right_order.json', 'r') as file:
+        with open('data/right_order.json', mode='r', encoding='utf-8') as file:
             data = json.load(file)
             self.right_order = data
 

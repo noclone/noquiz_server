@@ -1,114 +1,114 @@
 [
   {
     "difficulty": "EASY",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": ["https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg"]
+    "thumbnail": "https://media.istockphoto.com/id/184276818/fr/photo/pomme-rouge.jpg?s=612x612&w=0&k=20&c=yk9viCWt8_VHAvSvzPuqZI-A79xkestBMyCf1AEyhrc=",
+    "question": "Un kilo de pommes coûte-t-il plus cher en Corée du Sud ou au Groenland ?",
+    "answer": "Gr: 4,76€ Cor: 6.16€",
+    "images": []
   },
   {
     "difficulty": "MEDIUM",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
+    "thumbnail": "https://liquipedia.net/commons/images/thumb/9/9a/Split_Top_Down_View.png/675px-Split_Top_Down_View.png",
+    "question": "Quelle est le nom de cette carte dans Valorant ?",
+    "answer": "Split",
+    "images": ["https://liquipedia.net/commons/images/thumb/9/9a/Split_Top_Down_View.png/675px-Split_Top_Down_View.png"]
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "https://www.laboiteverte.fr/wp-content/uploads/2015/04/affiche-film-sans-titre-02-580x820.jpg",
+    "question": "A quel film appartient cette affiche ?",
+    "answer": "127 heures",
+    "images": ["https://www.laboiteverte.fr/wp-content/uploads/2015/04/affiche-film-sans-titre-02-580x820.jpg"]
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/countries-and-continents/512/America-512.png",
+    "question": "Quel était le nom du bateau de Christophe Colomb lors de son voyage vers l'Amérique ?",
+    "answer": "Santa Maria",
     "images": []
   },
   {
     "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
+    "thumbnail": "https://us.123rf.com/450wm/mochipet/mochipet1711/mochipet171100044/89194002-vector-illustration-hand-drawn-doodle-of-tornado-swirl-cartoon-sketch-destructive-phenomenon-of.jpg",
+    "question": "Quelle est la différence entre un typhon, un ouragan, et un cyclone ?",
+    "answer": "Cyclone: Indien, Pacifique Sud - Ouragan: Atlantique Nord Pacifique Nord Est - Typhon: Pacifique Nord Ouest",
+    "images": []
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "https://img.freepik.com/vecteurs-libre/planete-terre_1308-82523.jpg?semt=ais_hybrid&w=740",
+    "question": "Quelle est, approximativement, la composition de l'atmosphere ?",
+    "answer": "78% diazote, 21% de dioxygene, 1% gaz rares",
+    "images": []
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "https://img.freepik.com/vecteurs-premium/contour-arbre-chute-livre-coloration-page-ligne-art-illustration-dessin-numerique_871209-9816.jpg?semt=ais_hybrid&w=740",
+    "question": "De quel arbuste provient cette feuille ?",
+    "answer": "laurier",
+    "images": ["https://fr.wikipedia.org/wiki/Feuille_de_laurier#/media/Fichier:Laurus_nobilis_leaves.png"]
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/1280px-Flag_of_the_Netherlands.svg.png",
+    "question": "D'où vient le nom des Pays Bas ?",
+    "answer": "Altitude sous le niveau de la mer",
     "images": []
   },
   {
     "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
+    "thumbnail": "https://cdn-tam.ouest-france.fr/media/cache/downscale_1200/coloriage-sur-la-main-1.png",
+    "question": "Combiens d'os dans la main (poignet compris) ?",
+    "answer": "27",
     "images": []
   },
   {
     "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
+    "thumbnail": "https://france3-regions.franceinfo.fr/image/DT1mDSi3HWkH4pZJ8Zxb5ElAj0U/5568x3712/regions/2023/06/08/6481e9838f578_000-33h798w.jpg",
+    "question": "Pourquoi la course des 24h du Mans de 1955 est elle connue ?",
+    "answer": "Accident qui fait plus de 80 morts dans le public",
+    "images": []
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "https://img.pixers.pics/pho_wat(s3:700/FO/12/99/75/76/700_FO12997576_779dbace8891cc3e0915a29e1b74f9f9.jpg,525,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,305,650,jpg)/oreillers-de-corps-drapeaux-du-monde-flags-of-the-world.jpg.jpg",
     "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
+    "answer": "Belize",
+    "images": ["https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Flag_of_Belize.svg/2560px-Flag_of_Belize.svg.png"]
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "https://media.istockphoto.com/id/951722782/fr/vectoriel/libra-isol%C3%A9-sur-fond-blanc.jpg?s=612x612&w=0&k=20&c=PaWhR22cyMXyD2nCbLB2xEkO6KLrOG-Q5TMTfhAKAEw=",
+    "question": "Qu'est ce qu'un yoctogramme ?",
+    "answer": "10e-27kg ou 10e-24g",
+    "images": []
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "https://img.freepik.com/vecteurs-premium/ensemble-silhouettes-vectorielles-dessinees-main-montagnes-forme-paysage-chaine-rocheuse-montagnes-randonnee-pois_1112812-12096.jpg?semt=ais_hybrid&w=740",
+    "question": "Quel est le point terrestre le plus éloigné du centre de la terre ?",
+    "answer": "Mont Chimborazo en Équateur ",
+    "images": []
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "https://cdn-icons-png.flaticon.com/512/3461/3461437.png",
+    "question": "Quels sont les 3 plus grands pays au monde en superficie ?",
+    "answer": "Russie: 17.1M Canada 9.9M USA: 9.8M",
     "images": []
   },
   {
     "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
+    "thumbnail": "https://www.abcmouse.com/learn/wp-content/uploads/2024/10/Spelling-header-image.png",
+    "question": "Comment s'écrit la maladie de la ... ?",
+    "answer": "Cirrhose",
     "images": []
   },
   {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
-    "images": []
-  },
-  {
-    "difficulty": "HARD",
-    "thumbnail": "https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg",
-    "question": "A quel pays appartient ce drapeau ?",
-    "answer": "Rwanda",
+    "difficulty": "MEDIUM",
+    "thumbnail": "https://www.loheac.fr/medias/sites/13/2019/01/livre-histoire.gif",
+    "question": "Depuis quand la Norvège est elle indépendante ?",
+    "answer": "1905",
     "images": []
   }
 ]
