@@ -7,6 +7,8 @@ from data_types.room import Room
 class MessageHandler:
     async def handle_message(self, message, player, room):
         data = json.loads(message)
+        if room.display is not None and player.id == room.display.id:
+            return
         if "buzz" in data.keys():
             await self.send_to_admin(room, json.dumps({"buzz": [player.name, time.time()]}))
         elif "player-answer" in data.keys():
