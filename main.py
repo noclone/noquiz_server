@@ -90,7 +90,7 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
         init_data = await websocket.receive_text()
         player_info = json.loads(init_data)
         player = Player(
-            id=player_info.get("id", str(uuid4()),),
+            id=player_info.get("player_id", str(uuid4()),),
             name=player_info.get("name", "Anonymous"),
             websocket=websocket,
         )
@@ -110,10 +110,12 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
     elif player_info.get("display", False):
         room.set_display(player)
     else:
-        room.add_player(player)
+        player = room.add_player(player)
 
     try:
         room_state = room.get_state()
+        room_state["player_id"] = player.id
+        room_state["player_name"] = player.name
         await message_handler.broadcast_to_room(room, json.dumps(room_state))
 
         while True:
@@ -124,8 +126,6 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
             room.admin = None
         elif room.display is not None and room.display.id == player.id:
             room.display = None
-        else:
-            room.remove_player(player.id)
 
         if room.admin is None:
             await message_handler.broadcast_to_room(room, json.dumps({"room-deleted": True}))

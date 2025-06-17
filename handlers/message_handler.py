@@ -9,6 +9,14 @@ class MessageHandler:
         data = json.loads(message)
         if room.display is not None and player.id == room.display.id:
             return
+
+        if "start-game" in data.keys():
+            room.started = True
+
+        if "update-player-name" in data.keys():
+            player.name = data["update-player-name"]
+            message = json.dumps(room.get_state())
+
         if "buzz" in data.keys():
             await self.send_to_admin(room, json.dumps({"buzz": [player.name, time.time()]}))
         elif "player-answer" in data.keys():

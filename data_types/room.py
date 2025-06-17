@@ -11,9 +11,14 @@ class Room:
         self.admin: Player | None = None
         self.display: Player | None = None
         self.questions_handler = QuestionsHandler()
+        self.started = False
 
     def add_player(self, player: Player):
-        self.players[player.id] = player
+        if player.id not in self.players:
+            self.players[player.id] = player
+        else:
+            self.players[player.id].websocket = player.websocket
+        return self.players[player.id]
 
     def remove_player(self, player_id: str):
         if player_id in self.players:
