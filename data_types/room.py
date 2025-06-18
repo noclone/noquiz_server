@@ -12,6 +12,7 @@ class Room:
         self.display: Player | None = None
         self.questions_handler = QuestionsHandler()
         self.started = False
+        self.last_right_order = {}
 
     def add_player(self, player: Player):
         if player.id not in self.players:
@@ -39,5 +40,6 @@ class Room:
             "room_id": self.id,
             "player_count": len(self.players),
             "players": [p.to_dict() for p in self.players.values()],
-            "admin": {"id": self.admin.id, "name": self.admin.name} if self.admin else None
+            "admin": {"id": self.admin.id, "name": self.admin.name} if self.admin else None,
+            "started": self.started,
         }

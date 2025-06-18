@@ -1,6 +1,7 @@
 import json
 import time
 
+from data_types import room
 from data_types.room import Room
 
 
@@ -12,6 +13,13 @@ class MessageHandler:
 
         if "start-game" in data.keys():
             room.started = True
+
+        if "right-order" in data.keys():
+            room.last_right_order = data
+
+        if "right-order-request" in data.keys() and player.id != room.admin.id:
+            await self.send_to_player(room, player.id, json.dumps({"right-order-answer": room.last_right_order}))
+            return
 
         if "update-player-name" in data.keys():
             player.name = data["update-player-name"]
@@ -45,3 +53,8 @@ class MessageHandler:
 
     async def send_to_display(self, room: Room, message: str):
         await room.display.websocket.send_text(message)
+
+    async def send_to_player(self, room: Room, player_id: str, message: str):
+        player = room.players.get(player_id)
+        if player:
+            await player.websocket.send_text(message)
