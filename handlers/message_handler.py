@@ -1,60 +1,144 @@
 import json
 import time
 
-from data_types import room
+from data_types.message import create_message, Message, Subject
+from data_types.player import Player
 from data_types.room import Room
 
 
-class MessageHandler:
-    async def handle_message(self, message, player, room):
-        data = json.loads(message)
-        if room.display is not None and player.id == room.display.id:
-            return
+async def handle_message(raw, player, room):
+    data = json.loads(raw)
+    message = create_message(data)
 
-        if "start-game" in data.keys():
-            room.started = True
+    # Display
+    if room.display is not None and player.id == room.display.id:
+        print(f"ERROR Display: {message}")
+        return
 
-        if "right-order" in data.keys():
-            room.last_right_order = data
+    # Admin
+    elif room.admin is not None and player.id == room.admin.id:
+        await handle_admin_client_message(message, room, player)
+        return
 
-        if "right-order-request" in data.keys() and player.id != room.admin.id:
-            await self.send_to_player(room, player.id, json.dumps({"right-order-answer": room.last_right_order}))
-            return
+    # Player
+    else:
+        await handle_player_client_message(message, room, player)
+        return
 
-        if "update-player-name" in data.keys():
-            player.name = data["update-player-name"]
-            message = json.dumps(room.get_state())
 
-        if "buzz" in data.keys():
-            await self.send_to_admin(room, json.dumps({"buzz": [player.name, time.time()]}))
-        elif "player-answer" in data.keys():
-            player.current_answer = data["player-answer"]
-        elif 'player-right-order-answer' in data.keys():
-            data["player_name"] = player.name
-            await self.send_to_display(room, json.dumps(data))
-        else:
-            await self.broadcast_to_room(room, message)
+async def send_to_admin(room: Room, message: str):
+    await room.admin.websocket.send_text(message)
 
-    async def broadcast_to_room(self, room: Room, message: str):
-        players = list(room.players.values())
-        if room.admin:
-            players.append(room.admin)
-        if room.display:
-            players.append(room.display)
+async def send_to_display(room: Room, message: str):
+    await room.display.websocket.send_text(message)
 
-        for player in players:
-            try:
-                await player.websocket.send_text(message)
-            except:
-                continue
+async def send_to_player(room: Room, player_id: str, message: str):
+    player = room.players.get(player_id)
+    if player:
+        await player.websocket.send_text(message)
 
-    async def send_to_admin(self, room: Room, message: str):
-        await room.admin.websocket.send_text(message)
-
-    async def send_to_display(self, room: Room, message: str):
-        await room.display.websocket.send_text(message)
-
-    async def send_to_player(self, room: Room, player_id: str, message: str):
-        player = room.players.get(player_id)
-        if player:
+async def send_to_all_players(room: Room, self_player: Player, message: str):
+    for player in room.players.values():
+        if player.id != self_player.id:
             await player.websocket.send_text(message)
+
+async def broadcast_to_room(room: Room, player: Player, message: str):
+        await send_to_admin(room, message)
+        await send_to_display(room, message)
+        await send_to_all_players(room, player, message)
+
+async def handle_player_client_message(message: Message, room: Room, player: Player):
+    if message.subject == Subject.BUZZER and message.action == "ADD":
+        response = Message(subject=Subject.BUZZER, action=message.action, content={"PLAYER_NAME": player.name, "TIME": time.time()})
+        await send_to_admin(room, json.dumps(response.to_json()))
+        return
+
+    if message.subject == Subject.PLAYER_NAME and message.action == "UPDATE":
+        player.name = message.content["PLAYER_NAME"]
+        room_state = room.get_state()
+        await broadcast_to_room(room, player, json.dumps(room_state))
+        return
+
+    if message.subject == Subject.PLAYER_NUMBER_ANSWER and message.action == "UPDATE":
+        player.current_answer = message.content["VALUE"]
+        return
+
+    if message.subject == Subject.RIGHT_ORDER:
+        if message.action == "REQUEST":
+            response = Message(subject=Subject.RIGHT_ORDER, action=message.action, content=room.last_right_order)
+            await send_to_player(room, player.id, json.dumps(response.to_json()))
+            return
+        if message.action == "PLAYER_ANSWER":
+            message.content["PLAYER_NAME"] = player.name
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+
+    print(f"Unknown message: {message}")
+
+
+async def handle_admin_client_message(message: Message, room: Room, player: Player):
+    if message.subject == Subject.GAME_STATE and message.action == "START":
+        room.started = True
+        await send_to_all_players(room, player, json.dumps(message.to_json()))
+        return
+
+    if message.subject == Subject.RIGHT_ORDER:
+        if message.action == "SEND":
+            room.last_right_order = message.content
+            await send_to_all_players(room, player, json.dumps(message.to_json()))
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+        if message.action == "SHOW_ANSWER":
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+        if message.action == "REQUEST_PLAYERS_ANSWER":
+            clear_players_answer = Message(subject=Subject.RIGHT_ORDER, action="CLEAR_PLAYERS_ANSWER", content={})
+            await send_to_display(room, json.dumps(clear_players_answer.to_json()))
+            await send_to_all_players(room, player, json.dumps(message.to_json()))
+            return
+
+    if message.subject == Subject.TIMER:
+        await send_to_display(room, json.dumps(message.to_json()))
+        return
+
+    if message.subject == Subject.PLAYER_NUMBER_ANSWER and message.action == "SHOW":
+        message.content["PLAYERS"] = room.get_state()["players"]
+        await send_to_display(room, json.dumps(message.to_json()))
+        return
+
+    if message.subject == Subject.PLAYER_SCORE:
+        if message.action == "SHOW":
+            message.content["PLAYERS"] = room.get_state()["players"]
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+        if message.action == "UPDATE":
+            room.update_player_score(message.content["PLAYER_ID"], message.content["SCORE"])
+            return
+
+    if message.subject == Subject.QUESTION:
+        if message.action == "SEND":
+            reset_buzzer = Message(subject=Subject.BUZZER, action="RESET", content={})
+            await send_to_all_players(room, player, json.dumps(reset_buzzer.to_json()))
+
+            await send_to_display(room, json.dumps(message.to_json()))
+            await send_to_all_players(room, player, json.dumps(message.to_json()))
+            return
+        if message.action == "SHOW_ANSWER":
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+
+    if message.subject == Subject.BOARD:
+        if message.action == "UPDATE":
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+
+    if message.subject == Subject.THEMES:
+        if message.action == "SHOW":
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+        if message.action == "ANSWERS":
+            await send_to_display(room, json.dumps(message.to_json()))
+            return
+
+    print(f"Unknown message: {message}")
+
