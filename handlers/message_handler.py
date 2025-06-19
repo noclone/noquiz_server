@@ -81,6 +81,11 @@ async def handle_player_client_message(message: Message, room: Room, player: Pla
 async def handle_admin_client_message(message: Message, room: Room, player: Player):
     if message.subject == Subject.GAME_STATE and message.action == "START":
         room.started = True
+        await send_to_display(room, json.dumps(message.to_json()))
+        await send_to_all_players(room, player, json.dumps(message.to_json()))
+        return
+
+    if message.subject == Subject.BUZZER and message.action == "RESET":
         await send_to_all_players(room, player, json.dumps(message.to_json()))
         return
 
