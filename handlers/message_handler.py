@@ -30,7 +30,8 @@ async def send_to_admin(room: Room, message: str):
     await room.admin.websocket.send_text(message)
 
 async def send_to_display(room: Room, message: str):
-    await room.display.websocket.send_text(message)
+    if room.display is not None:
+        await room.display.websocket.send_text(message)
 
 async def send_to_player(room: Room, player_id: str, message: str):
     player = room.players.get(player_id)
@@ -55,8 +56,9 @@ async def handle_player_client_message(message: Message, room: Room, player: Pla
 
     if message.subject == Subject.PLAYER_NAME and message.action == "UPDATE":
         player.name = message.content["PLAYER_NAME"]
-        room_state = room.get_state()
-        await broadcast_to_room(room, player, json.dumps(room_state))
+        message = Message(Subject.GAME_STATE, "ROOM_UPDATE", room.get_state())
+        await send_to_player(room, player.id, json.dumps(message.to_json()))
+        await broadcast_to_room(room, player, json.dumps(message.to_json()))
         return
 
     if message.subject == Subject.PLAYER_NUMBER_ANSWER and message.action == "UPDATE":
