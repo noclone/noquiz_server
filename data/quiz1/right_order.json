@@ -2,11 +2,11 @@
   {
     "title": "Classez ces animaux du moins au plus gros dormeur",
     "data": [
-      ["https://upload.wikimedia.org/wikipedia/commons/e/e0/Giraffa_camelopardalis_angolensis.jpg", "Girafe","4h/jour"],
-      ["https://upload.wikimedia.org/wikipedia/commons/3/37/African_Bush_Elephant.jpg", "Elephant","6h/jour"],
-      ["https://gcdn.thunderstore.io/live/repository/icons/SRR8-Pack_for_the_bois-1.0.1.png.128x128_q95.png", "Humain","7h/jour"],
-      ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg", "Chat","14h/jour"],
-      ["https://upload.wikimedia.org/wikipedia/commons/4/49/Koala_climbing_tree.jpg", "Koala","19h/jour"]
+      ["/static/girafe.jpg", "Girafe","4h/jour"],
+      ["/static/elephant.jpg", "Elephant","6h/jour"],
+      ["/static/humain.png", "Humain","7h/jour"],
+      ["/static/cat.jpg", "Chat","14h/jour"],
+      ["/static/koala.jpg", "Koala","19h/jour"]
     ]
   },
   {
