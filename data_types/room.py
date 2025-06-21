@@ -13,6 +13,7 @@ class Room:
         self.questions_handler = QuestionsHandler()
         self.started = False
         self.last_right_order = {}
+        self.last_question = {}
 
     def add_player(self, player: Player):
         if player.id not in self.players:
@@ -25,9 +26,9 @@ class Room:
         if player_id in self.players:
             del self.players[player_id]
 
-    def update_player_score(self, player_id: str, score: int):
+    def update_player_score(self, player_id: str, offset: int):
         if player_id in self.players:
-            self.players[player_id].score = score
+            self.players[player_id].score += offset
 
     def set_admin(self, admin: Player):
         self.admin = admin

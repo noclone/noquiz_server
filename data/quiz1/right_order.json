@@ -2,11 +2,11 @@
   {
     "title": "Classez ces animaux du moins au plus gros dormeur",
     "data": [
-      ["/static/girafe.jpg", "Girafe","4h/jour"],
-      ["/static/elephant.jpg", "Elephant","6h/jour"],
-      ["/static/humain.png", "Humain","7h/jour"],
-      ["/static/cat.jpg", "Chat","14h/jour"],
-      ["/static/koala.jpg", "Koala","19h/jour"]
+      ["/static/animals/girafe.jpg", "Girafe","4h/jour"],
+      ["/static/animals/elephant.jpg", "Elephant","6h/jour"],
+      ["/static/animals/humain.png", "Humain","7h/jour"],
+      ["/static/animals/cat.jpg", "Chat","14h/jour"],
+      ["/static/animals/koala.jpg", "Koala","19h/jour"]
     ]
   },
   {

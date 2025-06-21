@@ -1,4 +1,6 @@
 {
-  "sport": "sport.csv",
-  "science": "science.csv"
+  "geographie": "geographie.json",
+  "gastronomie": "gastronomie.json",
+  "gaming": "gaming.json",
+  "animaux": "animaux.json"
 }

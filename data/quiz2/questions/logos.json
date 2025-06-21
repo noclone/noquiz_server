@@ -1,0 +1,37 @@
+[
+  {
+    "answer": "MasterCard",
+    "expected_answer_type": "NONE",
+    "images": ["/static/logos/mastercard_logo.png"]
+  },
+  {
+    "answer": "Mercedez",
+    "expected_answer_type": "NONE",
+    "images": ["/static/logos/mercedez_logo.png"]
+  },
+  {
+    "answer": "PlayStation",
+    "expected_answer_type": "NONE",
+    "images": ["/static/logos/playstation_logo.png"]
+  },
+  {
+    "answer": "Shell",
+    "expected_answer_type": "NONE",
+    "images": ["/static/logos/shell_logo.png"]
+  },
+  {
+    "answer": "Starbucks",
+    "expected_answer_type": "NONE",
+    "images": ["/static/logos/starbucks_logo.png"]
+  },
+  {
+    "answer": "Warner Bros",
+    "expected_answer_type": "NONE",
+    "images": ["/static/logos/warner_bros_logo.png"]
+  },
+  {
+    "answer": "WWF",
+    "expected_answer_type": "NONE",
+    "images": ["/static/logos/wwf_logo.png"]
+  }
+]

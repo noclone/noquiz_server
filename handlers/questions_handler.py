@@ -1,46 +1,37 @@
-import csv
 import json
 
 from data_types.question import Question, AnswerType
 
-selected_quiz = "quiz1"
+selected_quiz = "quiz2"
+
+
+def get_question_from_data(data: dict, question_id: int):
+    return Question(
+        id=question_id,
+        question=data["question"] if "question" in data else "",
+        answer=data["answer"],
+        expected_answer_type=AnswerType(data["expected_answer_type"]),
+        images=data["images"] if "images" in data else [],
+        mcq_options=data["mcq_options"] + [data["answer"]] if "mcq_options" in data else [],
+    )
+
+def get_questions_from_json(category: str):
+    with open(f'data/{selected_quiz}/{category}/{category}.json', mode='r') as file:
+        data = json.load(file)
+        res = {subject: [] for subject in data.keys()}
+        for subject in res:
+            with open(f'data/{selected_quiz}/{category}/' + data[subject], mode='r', encoding='utf-8') as data_file:
+                content = json.load(data_file)
+                for elem in content:
+                    res[subject].append(
+                        get_question_from_data(elem, len(res[subject]))
+                    )
+    return res
 
 class QuestionsHandler:
     def __init__(self):
-        self.questions_categories = []
-
-        with open(f'data/{selected_quiz}/questions/questions.json', mode='r') as file:
-            data = json.load(file)
-            self.questions_categories = {category: [] for category in data.keys()}
-            for category in self.questions_categories:
-                with open(f'data/{selected_quiz}/questions/' + data[category], mode='r', encoding='utf-8') as csvfile:
-                    reader = csv.reader(csvfile, delimiter=';')
-                    for row in reader:
-                        self.questions_categories[category].append(
-                            Question(
-                                id=len(self.questions_categories[category]),
-                                question=row[0],
-                                answer=row[1],
-                                expected_answer_type=AnswerType(row[2]),
-                                images=[image for image in row[3:]] if len(row) > 3 else [],
-                            )
-                        )
-
-        with open(f'data/{selected_quiz}/themes/themes.json', 'r') as file:
-            data = json.load(file)
-            self.themes = {theme: [] for theme in data.keys()}
-            for theme in self.themes:
-                with open(f'data/{selected_quiz}/themes/' + data[theme], mode='r', encoding='utf-8') as csvfile:
-                    reader = csv.reader(csvfile, delimiter=';')
-                    for row in reader:
-                        self.themes[theme].append(
-                            Question(
-                                id=len(self.themes[theme]),
-                                question=row[0],
-                                answer=row[1],
-                                images=[image for image in row[2:]] if len(row) > 2 else [],
-                            )
-                        )
+        self.questions_categories = get_questions_from_json("questions")
+        self.themes = get_questions_from_json("themes")
 
         with open(f'data/{selected_quiz}/right_order.json', mode='r', encoding='utf-8') as file:
             data = json.load(file)
@@ -56,6 +47,7 @@ class QuestionsHandler:
                     answer=question['answer'],
                     expected_answer_type=AnswerType.NONE,
                     images=question['images'],
+                    mcq_options=[]
                 ).to_json()
                 board_element['difficulty'] = question['difficulty']
                 board_element['thumbnail'] = question['thumbnail']

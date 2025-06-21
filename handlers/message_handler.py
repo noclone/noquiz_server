@@ -3,6 +3,7 @@ import time
 
 from data_types.message import create_message, Message, Subject
 from data_types.player import Player
+from data_types.question import AnswerType
 from data_types.room import Room
 
 
@@ -27,7 +28,8 @@ async def handle_message(raw, player, room):
 
 
 async def send_to_admin(room: Room, message: str):
-    await room.admin.websocket.send_text(message)
+    if room.admin is not None:
+        await room.admin.websocket.send_text(message)
 
 async def send_to_display(room: Room, message: str):
     if room.display is not None:
@@ -61,7 +63,7 @@ async def handle_player_client_message(message: Message, room: Room, player: Pla
         await broadcast_to_room(room, player, json.dumps(message.to_json()))
         return
 
-    if message.subject == Subject.PLAYER_NUMBER_ANSWER and message.action == "UPDATE":
+    if message.subject == Subject.PLAYER_ANSWER and message.action == "UPDATE":
         player.current_answer = message.content["VALUE"]
         return
 
@@ -73,6 +75,19 @@ async def handle_player_client_message(message: Message, room: Room, player: Pla
         if message.action == "PLAYER_ANSWER":
             message.content["PLAYER_NAME"] = player.name
             await send_to_display(room, json.dumps(message.to_json()))
+            return
+
+    if message.subject == Subject.PLAYER_SCORE:
+        if message.action == "INCREASE":
+            room.update_player_score(player.id, message.content["VALUE"])
+            message = Message(Subject.PLAYER_SCORE, "UPDATE", {"PLAYER_ID": player.id, "VALUE": player.score})
+            await send_to_admin(room, json.dumps(message.to_json()))
+            return
+
+    if message.subject == Subject.QUESTION:
+        if message.action == "REQUEST":
+            if room.last_question:
+                await send_to_player(room, player.id, json.dumps(room.last_question))
             return
 
     print(f"Unknown message: {message}")
@@ -108,7 +123,7 @@ async def handle_admin_client_message(message: Message, room: Room, player: Play
         await send_to_display(room, json.dumps(message.to_json()))
         return
 
-    if message.subject == Subject.PLAYER_NUMBER_ANSWER and message.action == "SHOW":
+    if message.subject == Subject.PLAYER_ANSWER and message.action == "SHOW":
         message.content["PLAYERS"] = room.get_state()["players"]
         await send_to_display(room, json.dumps(message.to_json()))
         return
@@ -118,20 +133,30 @@ async def handle_admin_client_message(message: Message, room: Room, player: Play
             message.content["PLAYERS"] = room.get_state()["players"]
             await send_to_display(room, json.dumps(message.to_json()))
             return
-        if message.action == "UPDATE":
-            room.update_player_score(message.content["PLAYER_ID"], message.content["SCORE"])
+        if message.action == "INCREASE":
+            room.update_player_score(message.content["PLAYER_ID"], message.content["VALUE"])
+            message = Message(Subject.PLAYER_SCORE, "UPDATE", {"PLAYER_ID": message.content["PLAYER_ID"], "VALUE": room.players[message.content["PLAYER_ID"]].score})
+            await send_to_admin(room, json.dumps(message.to_json()))
+            return
+        if message.action == "DECREASE":
+            room.update_player_score(message.content["PLAYER_ID"], -message.content["VALUE"])
+            message = Message(Subject.PLAYER_SCORE, "UPDATE", {"PLAYER_ID": message.content["PLAYER_ID"], "VALUE": room.players[message.content["PLAYER_ID"]].score})
+            await send_to_admin(room, json.dumps(message.to_json()))
             return
 
     if message.subject == Subject.QUESTION:
         if message.action == "SEND":
-            reset_buzzer = Message(subject=Subject.BUZZER, action="RESET", content={})
-            await send_to_all_players(room, player, json.dumps(reset_buzzer.to_json()))
+            if message.content["EXPECTED_ANSWER_TYPE"] == AnswerType.NONE.value:
+                reset_buzzer = Message(subject=Subject.BUZZER, action="RESET", content={})
+                await send_to_all_players(room, player, json.dumps(reset_buzzer.to_json()))
 
+            room.last_question = message.to_json()
             await send_to_display(room, json.dumps(message.to_json()))
             await send_to_all_players(room, player, json.dumps(message.to_json()))
             return
         if message.action == "SHOW_ANSWER":
             await send_to_display(room, json.dumps(message.to_json()))
+            await send_to_all_players(room, player, json.dumps(message.to_json()))
             return
 
     if message.subject == Subject.BOARD:

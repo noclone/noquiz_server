@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Un physicien théoricien et cosmologiste britannique, célèbre pour ses travaux sur les trous noirs. Né en 1942, il est devenu une figure emblématique de la science moderne grâce à ses contributions à la compréhension de l'univers. Malgré une maladie neurodégénérative qui l'a progressivement privé de mobilité, il a continué à travailler et à communiquer ses idées au monde entier. Il est également connu pour ses livres de vulgarisation scientifique, qui ont rendu la cosmologie accessible à un large public. Son esprit brillant et son courage face à l'adversité en ont fait une source d'inspiration pour des millions de personnes.",
+    "answer": "Stephen Hawking",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Un tube mondial qui a dominé les charts internationaux et est devenu un phénomène culturel. Sortie en 2012, cette chanson est connue pour son rythme entraînant et sa danse distinctive, qui a été imitée par des millions de personnes à travers le monde. L'artiste sud-coréen derrière ce succès est devenu une icône de la pop internationale, aidant à populariser la K-pop à l'échelle mondiale. La chanson a non seulement battu des records de vues sur des plateformes de streaming, mais elle a également marqué un tournant dans la reconnaissance de la musique coréenne sur la scène internationale.",
+    "answer": "Gangnam Style",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Un volcan actif majestueux connu pour être l'un des volcans les plus actifs et les plus emblématiques d'Europe. Avec une histoire éruptive qui remonte à des milliers d'années, il est célèbre pour ses fréquentes éruptions spectaculaires qui attirent l'attention des scientifiques et des touristes du monde entier. Ce volcan est également un site du patrimoine mondial de l'UNESCO, reconnu pour son importance géologique et son paysage unique. Ses pentes fertiles sont couvertes de vignobles et d'orangers, et il offre une vue imprenable sur la mer Méditerranée. En plus de son importance scientifique, il joue un rôle culturel et mythologique significatif dans l'histoire de la région.",
+    "answer": "Etna",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Mammifère herbivore massif, célèbre pour sa peau épaisse et ses cornes distinctives. Pesant jusqu'à 2 300 kg, il est l'un des plus grands animaux terrestres. Malgré leur taille imposante ils peuvent atteindre des vitesses de 55 km/h. Il existe plusieurs espèces, principalement en Afrique et en Asie. Ces animaux sont gravement menacés par le braconnage pour leurs cornes distinctives présentes sur leur nez. Leurs habitats varient des savanes aux forêts tropicales.",
+    "answer": "Rhinocéros",
+    "expected_answer_type": "NONE"
+  }
+]

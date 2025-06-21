@@ -4,6 +4,7 @@ from enum import Enum
 class AnswerType(Enum):
     NONE = "NONE"
     NUMBER = "NUMBER"
+    MCQ = "MCQ"
 
 @dataclass
 class Question:
@@ -11,6 +12,7 @@ class Question:
     question: str
     answer: str
     images: list[str]
+    mcq_options: list[str]
     expected_answer_type: AnswerType = AnswerType.NONE
 
     def to_json(self):

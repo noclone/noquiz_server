@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Régime politique dans lequel le détenteur du pouvoir l'exerce en vertu d'un droit propre : droit divin, hérédité (par opposition à république)",
+    "answer": "Monarchie",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Plat à base de riz au safran, garni de poulet émincé, de langoustines, de chorizo, de moules et de légumes divers. (Cuisine espagnole.)",
+    "answer": "Paella",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Effet d'une onde acoustique qui parvient à un point donné, après réflexion, avec une intensité et un retard suffisants pour être perçue comme distincte de l'onde directe par un auditeur placé en ce point.",
+    "answer": "Echo",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Rame à une ou deux palettes, avec laquelle les Indiens d'Amérique font avancer leur pirogue.",
+    "answer": "Pagaie",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Section de berge, de rive ou de rivage d'un port ou d'une voie navigable, aménagée en vue de permettre l'accostage des bâtiments de navigation, l'embarquement ou le débarquement des passagers, le chargement ou le déchargement des marchandises.",
+    "answer": "Quai",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Partie d'une plante où les grains ou les graines sont attachés, comme dans le cas du maïs.",
+    "answer": "Epi",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Cellule vivante, environnée de réserves alimentaires et d'enveloppes protectrices, et qui, après formation dans le corps d'une femelle, ponte et fécondation (l'ordre de ces trois phénomènes variant selon le groupe), donnera un jeune de la même espèce.",
+    "answer": "Oeuf",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Région du globe caractérisée par une pluviométrie inférieure à 200 et souvent même à 100 mms/an et où la densité de population est très faible en raison des conditions du climat (aridité, froid).",
+    "answer": "Désert",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Coiffure à calotte plate, rigide ou souple, munie d'une visière.",
+    "answer": "Casquette",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Machine automatique de traitement de l'information, obéissant à des programmes formés par des suites d'opérations arithmétiques et logiques.",
+    "answer": "Ordinateur",
+    "expected_answer_type": "NONE"
+  }
+]

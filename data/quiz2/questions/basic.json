@@ -1,0 +1,57 @@
+[
+  {
+    "question": "Depuis quand la Norvège est elle indépendante ?",
+    "answer": "1905",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Quel est le plus grand désert du monde ?",
+    "answer": "Antarctique",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel est le nom du premier satellite artificiel envoyé dans l'espace ?",
+    "answer": "Spoutnik 1",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Combien de cheveux en moyenne un humain a-t-il sur la tête ?",
+    "answer": "100 000",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Quel est le plus long fleuve du monde ?",
+    "answer": "Nil",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel est le nom de la monnaie utilisée au Japon ?",
+    "answer": "Yen",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Combien de planètes mineures (ou astéroïdes) ont été découvertes dans notre système solaire ?",
+    "answer": "1 113 527",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Qui a composé la Symphonie n°5 ?",
+    "answer": "Ludwig van Beethoven",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel pays a remporté le plus de médailles d'or aux Jeux Olympiques d'été de 2024 après les Etats-Unis ?",
+    "answer": "Chine",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Combien de langues différentes sont parlées dans le monde aujourd'hui ?",
+    "answer": "Environ 7000",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Quel est l'élément chimique représenté par le symbole 'W' ?",
+    "answer": "Tungstène",
+    "expected_answer_type": "NONE"
+  }
+]

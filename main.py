@@ -130,7 +130,6 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
         elif room.display is not None and room.display.id == player.id:
             room.display = None
         else:
-            room.remove_player(player.id)
             room_state = room.get_state()
             message = Message(Subject.GAME_STATE, "ROOM_UPDATE", room_state)
             await broadcast_to_room(room, player, json.dumps(message.to_json()))

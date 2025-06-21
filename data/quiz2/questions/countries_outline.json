@@ -1,0 +1,44 @@
+[
+  {
+    "answer": "Argentina",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/countries/Argentina.jpg"],
+    "mcq_options": ["Bhoutan", "Uruguay", "Lettonie"]
+  },
+  {
+    "answer": "Grece",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/countries/Greece.jpg"],
+    "mcq_options": ["Moldavie", "Japon", "Zambie"]
+  },
+  {
+    "answer": "Cuba",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/countries/Cuba.jpg"],
+    "mcq_options": ["Norvège", "Paraguay", "Yémen"]
+  },
+  {
+    "answer": "Somalia",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/countries/Somalia.jpg"],
+    "mcq_options": ["Sri Lanka", "Canada", "Togo"]
+  },
+  {
+    "answer": "Madagascar",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/countries/Madagascar.jpg"],
+    "mcq_options": ["Portugal", "Ouzbékistan", "Namibie"]
+  },
+  {
+    "answer": "SouthAfrica",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/countries/SouthAfrica.jpg"],
+    "mcq_options": ["Irlande", "Bangladesh", "Équateur"]
+  },
+  {
+    "answer": "Thailand",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/countries/Thailand.jpg"],
+    "mcq_options": ["Liban", "Kazakhstan", "Mozambique"]
+  }
+]

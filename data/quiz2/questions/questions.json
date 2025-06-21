@@ -1,7 +1,8 @@
 {
-  "Basic": "questions.csv",
-  "QPUC": "qpuc.csv",
-  "Logos": "logos.csv",
-  "Similar Logos": "similar_logos.csv",
-  "Definitions": "definitions.csv"
+  "Basic": "basic.json",
+  "QPUC": "qpuc.json",
+  "Logos": "logos.json",
+  "Similar Logos": "similar_logos.json",
+  "Definitions": "definitions.json",
+  "Countries outline": "countries_outline.json"
 }
