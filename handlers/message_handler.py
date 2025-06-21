@@ -13,7 +13,7 @@ async def handle_message(raw, player, room):
 
     # Display
     if room.display is not None and player.id == room.display.id:
-        print(f"ERROR Display: {message}")
+        await handle_display_client_message(message, room)
         return
 
     # Admin
@@ -90,7 +90,7 @@ async def handle_player_client_message(message: Message, room: Room, player: Pla
                 await send_to_player(room, player.id, json.dumps(room.last_question))
             return
 
-    print(f"Unknown message: {message}")
+    print(f"Player: Unknown message: {message}")
 
 
 async def handle_admin_client_message(message: Message, room: Room, player: Player):
@@ -172,5 +172,11 @@ async def handle_admin_client_message(message: Message, room: Room, player: Play
             await send_to_display(room, json.dumps(message.to_json()))
             return
 
-    print(f"Unknown message: {message}")
+    print(f"Admin: Unknown message: {message}")
 
+async def handle_display_client_message(message: Message, room: Room):
+    if message.subject == Subject.TIMER:
+        await send_to_display(room, json.dumps(message.to_json()))
+        return
+
+    print(f"Display: Unknown message: {message}")

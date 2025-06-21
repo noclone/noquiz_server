@@ -13,6 +13,7 @@ def get_question_from_data(data: dict, question_id: int):
         expected_answer_type=AnswerType(data["expected_answer_type"]),
         images=data["images"] if "images" in data else [],
         mcq_options=data["mcq_options"] + [data["answer"]] if "mcq_options" in data else [],
+        timer=data["timer"] if "timer" in data else 0
     )
 
 def get_questions_from_json(category: str):
@@ -47,7 +48,8 @@ class QuestionsHandler:
                     answer=question['answer'],
                     expected_answer_type=AnswerType.NONE,
                     images=question['images'],
-                    mcq_options=[]
+                    mcq_options=[],
+                    timer=question['timer'] if 'timer' in question else 0,
                 ).to_json()
                 board_element['difficulty'] = question['difficulty']
                 board_element['thumbnail'] = question['thumbnail']

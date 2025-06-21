@@ -2,7 +2,8 @@
   {
     "question": "Depuis quand la Norvège est elle indépendante ?",
     "answer": "1905",
-    "expected_answer_type": "NUMBER"
+    "expected_answer_type": "NUMBER",
+    "timer": 30
   },
   {
     "question": "Quel est le plus grand désert du monde ?",
@@ -17,7 +18,8 @@
   {
     "question": "Combien de cheveux en moyenne un humain a-t-il sur la tête ?",
     "answer": "100 000",
-    "expected_answer_type": "NUMBER"
+    "expected_answer_type": "NUMBER",
+    "timer": 20
   },
   {
     "question": "Quel est le plus long fleuve du monde ?",
@@ -32,7 +34,8 @@
   {
     "question": "Combien de planètes mineures (ou astéroïdes) ont été découvertes dans notre système solaire ?",
     "answer": "1 113 527",
-    "expected_answer_type": "NUMBER"
+    "expected_answer_type": "NUMBER",
+    "timer": 30
   },
   {
     "question": "Qui a composé la Symphonie n°5 ?",
@@ -47,7 +50,8 @@
   {
     "question": "Combien de langues différentes sont parlées dans le monde aujourd'hui ?",
     "answer": "Environ 7000",
-    "expected_answer_type": "NUMBER"
+    "expected_answer_type": "NUMBER",
+    "timer": 30
   },
   {
     "question": "Quel est l'élément chimique représenté par le symbole 'W' ?",

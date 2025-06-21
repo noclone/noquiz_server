@@ -13,6 +13,7 @@ class Question:
     answer: str
     images: list[str]
     mcq_options: list[str]
+    timer: int
     expected_answer_type: AnswerType = AnswerType.NONE
 
     def to_json(self):
