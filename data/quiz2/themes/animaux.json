@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "question": "Quel oiseau est connu pour sa capacité à imiter la voix humaine ?",
+    "answer": "Le perroquet"
+  },
+  {
+    "question": "Quel est le seul mammifère capable de voler ?",
+    "answer": "La chauve-souris"
+  },
+  {
+    "question": "Quel animal marin est connu pour avoir trois coeurs ?",
+    "answer": "La pieuvre"
+  },
+  {
+    "question": "Quel est l'animal national de l'Australie ?",
+    "answer": "Le kangourou"
+  },
+  {
+    "question": "Quel animal pond des œufs mais allaite aussi ses petits ?",
+    "answer": "L’ornithorynque"
+  },
+  {
+    "question": "Quel est le plus grand invertébré connu à ce jour ?",
+    "answer": "Le calmar colossal"
+  },
+  {
+    "question": "Quel est le plus grand mammifère terrestre vivant ?",
+    "answer": "L’éléphant d’Afrique"
+  },
+  {
+    "question": "Combien de pattes possède un crabe ?",
+    "answer": "10"
+  },
+  {
+    "question": "Quel est le nom du petit des gorilles ?",
+    "answer": "Le gorillon"
+  },
+  {
+    "question": "Quel oiseau pond les plus gros œufs du règne animal ?",
+    "answer": "L’autruche"
+  },
+  {
+    "question": "Quel oiseau de nuit chasse grâce à son ouïe très développée ?",
+    "answer": "La chouette"
+  },
+  {
+    "question": "Quel animal détient le record de longévité parmi les vertébrés ?",
+    "answer": "Le requin du Groenland"
+  },
+  {
+    "question": "Quel animal vit dans l’eau douce et construit des barrages ?",
+    "answer": "Le castor"
+  },
+  {
+    "question": "Quel insecte construit des dômes de terre avec de la salive et du sable ?",
+    "answer": "Le termite"
+  },
+  {
+    "question": "Quel animal peut survivre dans le vide spatial ?",
+    "answer": "Le tardigrade"
+  }
+]

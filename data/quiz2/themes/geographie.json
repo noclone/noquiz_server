@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "question": "Quel est le plus grand océan du monde ?",
+    "answer": "L’océan Pacifique"
+  },
+  {
+    "question": "Quel est le pays enclavé entre la Chine et la Russie ?",
+    "answer": "La Mongolie"
+  },
+  {
+    "question": "Quel pays possède la ville la plus au sud du monde ?",
+    "answer": "Le Chili (Puerto Williams)"
+  },
+  {
+    "question": "Quel est le fleuve le plus long du monde ?",
+    "answer": "Le Nil"
+  },
+  {
+    "question": "Quelle est la capitale de l’Australie ?",
+    "answer": "Canberra"
+  },
+  {
+    "question": "Quelle est la langue officielle de l’île de Madagascar ?",
+    "answer": "Le malgache"
+  },
+  {
+    "question": "Quelle chaîne de montagnes traverse l’Amérique du Sud ?",
+    "answer": "Les Andes"
+  },
+  {
+    "question": "Quelle mer est considérée comme la plus salée du monde ?",
+    "answer": "La mer Morte"
+  },
+  {
+    "question": "Quel est le plus grand archipel au monde par nombre d’îles ?",
+    "answer": "L’Indonésie"
+  },
+  {
+    "question": "Quel est le plus petit pays du monde en superficie ?",
+    "answer": "Le Vatican"
+  },
+  {
+    "question": "Quelle est la ville la plus peuplée d’Afrique ?",
+    "answer": "Lagos (Nigeria)"
+  },
+  {
+    "question": "Quel est le pays le plus densément peuplé au monde ?",
+    "answer": "Monaco"
+  },
+  {
+    "question": "Quelle île française est située à l’est de Madagascar ?",
+    "answer": "La Réunion"
+  },
+  {
+    "question": "Quelle ville est surnommée la ville éternelle ?",
+    "answer": "Rome"
+  },
+  {
+    "question": "Quelle est la capitale du Bhoutan ?",
+    "answer": "Thimphou"
+  }
+]

@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "question": "Quel est le nom du héros emblématique de la série The Legend of Zelda ?",
+    "answer": "Link"
+  },
+  {
+    "question": "Quelle est la console de salon la plus vendue de tous les temps ?",
+    "answer": "La PlayStation 2"
+  },
+  {
+    "question": "Quelle entreprise détient Steam, la principale plateforme de distribution de jeux PC ?",
+    "answer": "Valve"
+  },
+  {
+    "question": "Quel jeu mobile consiste à aligner des bonbons colorés ?",
+    "answer": "Candy Crush"
+  },
+  {
+    "question": "Quelle équipe eSport a remporté le plus de titres mondiaux sur League of Legends ?",
+    "answer": "T1 (anciennement SK Telecom T1)"
+  },
+  {
+    "question": "Quel est le nom du premier jeu à avoir intégré un easter egg connu ?",
+    "answer": "Adventure (Atari 2600, 1980)"
+  },
+  {
+    "question": "Quel jeu de sport célèbre permet de jouer au football avec des voitures ?",
+    "answer": "Rocket League"
+  },
+  {
+    "question": "Quel jeu indépendant de 2017 a popularisé le genre farming-life au-delà des consoles ?",
+    "answer": "Stardew Valley"
+  },
+  {
+    "question": "Quel a été le montant du plus gros cashprize d'une compétition d'esport ?",
+    "answer": "40M (The International 2021, Dota 2)"
+  },
+  {
+    "question": "Quel jeu en ligne demande de deviner qui est l’imposteur dans un vaisseau ?",
+    "answer": "Among Us"
+  },
+  {
+    "question": "Quelle société a racheté Activision Blizzard en 2022 (officiellement finalisé en 2023) ?",
+    "answer": "Microsoft"
+  },
+  {
+    "question": "Quel jeu narratif indépendant est centré sur un renard explorant un monde isométrique ?",
+    "answer": "Tunic"
+  },
+  {
+    "question": "Quel jeu de danse demande de suivre les mouvements à l’écran ?",
+    "answer": "Just Dance"
+  },
+  {
+    "question": "Quel moteur de jeu est développé par Epic Games et utilisé dans de nombreux blockbusters ?",
+    "answer": "Unreal Engine"
+  },
+  {
+    "question": "Quel studio japonais a développé la série Dark Souls, connue pour sa difficulté légendaire ?",
+    "answer": "FromSoftware"
+  }
+]

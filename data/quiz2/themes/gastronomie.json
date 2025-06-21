@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "question": "De quel fruit est faite la tarte Tatin ?",
+    "answer": "La pomme"
+  },
+  {
+    "question": "Quelle épice originaire de Crete provient d’un pistil de fleur et coûte très cher ?",
+    "answer": "Le safran"
+  },
+  {
+    "question": "Quel pays est le plus grand producteur de cacao au monde ?",
+    "answer": "La Côte d’Ivoire"
+  },
+  {
+    "question": "Quel ingrédient donne sa couleur jaune au curry ?",
+    "answer": "Le curcuma"
+  },
+  {
+    "question": "Quelle herbe aromatique est souvent utilisée dans la cuisine méditerranéenne et se marie bien avec la tomate ?",
+    "answer": "Le basilic"
+  },
+  {
+    "question": "Quel est le nom du plat coréen fermenté à base de chou et d’épices ?",
+    "answer": "Le kimchi"
+  },
+  {
+    "question": "Quel est l'ingrédient principal du guacamole ?",
+    "answer": "L'avocat"
+  },
+  {
+    "question": "Quelle épice issue de la plante Piper nigrum est la plus consommée au monde ?",
+    "answer": "Le poivre noir"
+  },
+  {
+    "question": "Quel fruit exotique est surnommé le roi des fruits en Asie du Sud-Est ?",
+    "answer": "Le durian"
+  },
+  {
+    "question": "Quelle boisson chaude est faite à base de feuilles infusées ?",
+    "answer": "Le thé"
+  },
+  {
+    "question": "Quel fruit sec est la base traditionnelle du baklava, un dessert du Moyen-Orient ?",
+    "answer": "La pistache ou noisette"
+  },
+  {
+    "question": "Quel alcool est traditionnellement utilisé dans la préparation du tiramisu italien ?",
+    "answer": "Le marsala"
+  },
+  {
+    "question": "Quelle préparation française est faite à base de blanc d’œuf monté et de sucre ?",
+    "answer": "La meringue"
+  },
+  {
+    "question": "Quel fromage italien à pâte molle est fabriqué à partir de lait de bufflonne ?",
+    "answer": "La mozzarella di bufala"
+  },
+  {
+    "question": "Quelle préparation française à base de pâte feuilletée et de crème pâtissière est garnie de glaçage au fondant ?",
+    "answer": "Le mille-feuille"
+  }
+]

@@ -10,7 +10,7 @@ def get_question_from_data(data: dict, question_id: int):
         id=question_id,
         question=data["question"] if "question" in data else "",
         answer=data["answer"],
-        expected_answer_type=AnswerType(data["expected_answer_type"]),
+        expected_answer_type=AnswerType(data["expected_answer_type"]) if "expected_answer_type" in data else AnswerType.NONE,
         images=data["images"] if "images" in data else [],
         mcq_options=data["mcq_options"] + [data["answer"]] if "mcq_options" in data else [],
         timer=data["timer"] if "timer" in data else 0
