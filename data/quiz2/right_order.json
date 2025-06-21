@@ -1,10 +1,42 @@
 [
   {
-    "title": "Triez ces ...",
+    "title": "Classez ces terrains de sport en fonction de leur surface en m2, avec dégagement si applicable.",
     "data": [
-      ["https://link1", "Elem1","Answer1"],
-      ["https://link2", "Elem2","Answer2"],
-      ["https://link3", "Elem3","Answer3"]
+      ["/static/sports/petanque.jpg", "Pétanque","60m2"],
+      ["/static/sports/basket.jpg", "Basket","576m2"],
+      ["/static/sports/tennis.jpg", "Tennis","648m2"],
+      ["/static/sports/football_americain.jpg", "Football Américain","5368m2"],
+      ["/static/sports/rugby.jpg", "Rugby","8400m2"]
+    ]
+  },
+  {
+    "title": "Classez ces livres par nombre d'exemplaires vendus.",
+    "data": [
+      ["/static/livres/hobbit.jpg", "Le Hobbit","100M"],
+      ["/static/livres/petit_prince.jpg", "Le petit prince","200M"],
+      ["/static/livres/harry_potter.png", "Harry Potter (tous les livres)","600M"],
+      ["/static/livres/petit_livre_rouge.jpg", "Le petit livre rouge","2Mds"],
+      ["/static/livres/bible.jpg", "La Bible","5Mds"]
+    ]
+  },
+  {
+    "title": "Classez ces boissons par acidité.",
+    "data": [
+      ["/static/boissons/urine.png", "Urine humaine","pH 5.5"],
+      ["/static/boissons/jus_pomme.jpeg", "Jus de pomme","pH 4"],
+      ["/static/boissons/jus_orange.jpg", "Jus d'orange","pH 3"],
+      ["/static/boissons/coca.jpg", "Coca Cola","pH 2.8"],
+      ["/static/boissons/jus_citron.jpg", "Jus de citron","pH 2.4"]
+    ]
+  },
+  {
+    "title": "Classez ces inventions par ordre chronologique.",
+    "data": [
+      ["/static/inventions/locomotive_vapeur.jpg", "Locomotive à vapeur","1804"],
+      ["/static/inventions/allumettes.jpg", "Allumettes","1805"],
+      ["/static/inventions/ampoule_filament.jpg", "Ampoule à filament","1879"],
+      ["/static/inventions/zippo.jpg", "Briquet à gaz","1948"],
+      ["/static/inventions/internet.jpg", "Internet","1983"]
     ]
   }
 ]
