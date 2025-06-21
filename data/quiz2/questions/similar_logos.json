@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "answer": "Right",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/similar_logos/burger_king.png"],
+    "mcq_options": ["Left"],
+    "timer": 30
+  },
+  {
+    "answer": "Up",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/similar_logos/coca.png"],
+    "mcq_options": ["Down"],
+    "timer": 30
+  },
+  {
+    "answer": "Down",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/similar_logos/fils.png"],
+    "mcq_options": ["Up"],
+    "timer": 30
+  },
+  {
+    "answer": "Left",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/similar_logos/honda.png"],
+    "mcq_options": ["Right"],
+    "timer": 30
+  },
+  {
+    "answer": "Up",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/similar_logos/paypal.png"],
+    "mcq_options": ["Down"],
+    "timer": 30
+  },
+  {
+    "answer": "Up",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/similar_logos/puma.png"],
+    "mcq_options": ["Down"],
+    "timer": 30
+  },
+  {
+    "answer": "Down",
+    "expected_answer_type": "MCQ",
+    "images": ["/static/similar_logos/samsung.png"],
+    "mcq_options": ["Up"],
+    "timer": 30
+  }
+]
