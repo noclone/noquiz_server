@@ -1,16 +1,114 @@
 [
   {
+    "difficulty": "MEDIUM",
+    "thumbnail": "/static/random/moon.webp",
+    "question": "Combien de temps met la lumière de la Lune pour parvenir à la Terre ?",
+    "answer": "Environ 1.3s",
+    "images": []
+  },
+  {
     "difficulty": "EASY",
-    "thumbnail": "https://link",
-    "question": "What is ... ?",
-    "answer": "Answer1",
-    "images": ["https://link1, https://link2"]
+    "thumbnail": "/static/random/volcan.jpg",
+    "question": "Quelle ville antique fut détruite par l’éruption du Vésuve en 79 après J.-C. ?",
+    "answer": "Pompéi",
+    "images": []
+  },
+  {
+    "difficulty": "HARD",
+    "thumbnail": "/static/random/muraille.jpg",
+    "question": "Quelle est la longueur de la Grande Muraille de Chine ?",
+    "answer": "21 196 kilomètres",
+    "images": []
+  },
+  {
+    "difficulty": "HARD",
+    "thumbnail": "/static/random/tableau_periodic.png",
+    "question": "Qui a créé le tableau périodique des éléments ?",
+    "answer": "Dmitri Mendeleïev",
+    "images": []
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "/static/random/ile_maurice.jpg",
+    "question": "Quel oiseau emblématique de l’île Maurice a disparu au XVIIe siècle ?",
+    "answer": "Le dodo",
+    "images": []
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "/static/random/math.jpg",
+    "question": "Quel est le nom de la suite mathématique dont chaque terme est la somme des deux précédents ?",
+    "answer": "Suite de Fibonacci",
+    "images": []
   },
   {
     "difficulty": "MEDIUM",
-    "thumbnail": "https://link",
-    "question": "What is ... ?",
-    "answer": "Answer2",
+    "thumbnail": "/static/random/france.jpg",
+    "question": "Combien la France compte-t-elle de départements ?",
+    "answer": "101",
     "images": []
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "/static/random/or.jpg",
+    "question": "Quel est le symbole chimique de l’or ?",
+    "answer": "Au",
+    "images": []
+  },
+  {
+    "difficulty": "HARD",
+    "thumbnail": "/static/random/langue.jpg",
+    "question": "Quelle est la plus ancienne langue écrite connue ?",
+    "answer": "Le sumérien",
+    "images": []
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "/static/random/otan.png",
+    "question": "Que signifie l'acronyme OTAN ?",
+    "answer": "Organisation du Traité de l'Atlantique Nord",
+    "images": []
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "/static/random/theatre.png",
+    "question": "Quel est le vrai nom de Molière ?",
+    "answer": "Jean-Baptiste Poquelin",
+    "images": []
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "/static/random/systeme_solaire.webp",
+    "question": "Citez les 8 planètes du système solaire dans l'ordre de proximité au soleil.",
+    "answer": "Mercure, Venus, Terre, Mars, Jupiter, Saturne, Uranus, Neptune",
+    "images": []
+  },
+  {
+    "difficulty": "EASY",
+    "thumbnail": "/static/random/michael_jackson.jpg",
+    "question": "Quel est l’album le plus vendu de Michael Jackson ?",
+    "answer": "Thriller",
+    "images": []
+  },
+  {
+    "difficulty": "HARD",
+    "thumbnail": "/static/random/totoro.webp",
+    "question": "Quel studio japonais est à l’origine de Mon Voisin Totoro et Le Voyage de Chihiro ?",
+    "answer": "Studio Ghibli",
+    "images": []
+  },
+  {
+    "difficulty": "MEDIUM",
+    "thumbnail": "/static/random/larousse.jpg",
+    "question": "Ensemble de toutes les sciences qui étudient les espèces vivantes et les lois de la vie.",
+    "answer": "Biologie",
+    "images": []
+  },
+  {
+    "difficulty": "HARD",
+    "thumbnail": "/static/random/world_outline.png",
+    "question": "",
+    "answer": "Zimbabwe",
+    "images": ["/static/countries/zimbabwe.jpg"]
   }
 ]
