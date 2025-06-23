@@ -7,8 +7,7 @@ from uuid import uuid4
 
 from data_types.message import create_message, Subject, Message
 from data_types.player import Player
-from handlers.message_handler import send_to_admin, send_to_all_players, handle_message, send_to_display, \
-    broadcast_to_room
+from handlers.message_handler import send_to_admin, send_to_all_players, handle_message, broadcast_to_room
 from handlers.room_handler import RoomHandler
 
 app = FastAPI()
@@ -94,39 +93,42 @@ async def websocket_endpoint(websocket: WebSocket, room_id: str):
         await websocket.close()
         return
 
-    response = Message(subject=Subject.PLAYER_INIT, action="INIT_SUCCESS", content={"PLAYER_ID": player.id})
-    await websocket.send_text(json.dumps(response.to_json()))
-
     room = room_handler.get_room(room_id)
     if not room:
         await websocket.close()
         return
 
-    if is_admin:
-        room.set_admin(player)
-    elif is_display:
-        room.set_display(player)
-    else:
-        player = room.add_player(player)
+    if is_admin and room.admin is not None and room.admin.id != player.id:
+        response = Message(subject=Subject.PLAYER_INIT, action="INIT_FAILED", content={"REASON": "Room already has an admin."})
+        await websocket.send_text(json.dumps(response.to_json()))
+        await websocket.close()
+        return
+
+    response = Message(subject=Subject.PLAYER_INIT, action="INIT_SUCCESS", content={"PLAYER_ID": player.id})
+    await websocket.send_text(json.dumps(response.to_json()))
 
     try:
-        room_state = room.get_state()
-        room_state["player_id"] = player.id
-        room_state["player_name"] = player.name
-        message = Message(Subject.GAME_STATE, "ROOM_UPDATE", room_state)
-        await send_to_admin(room, json.dumps(message.to_json()))
-        await send_to_all_players(room, player, json.dumps(message.to_json()))
+        if is_admin:
+            room.set_admin(player)
+            message = Message(Subject.GAME_STATE, "ROOM_UPDATE", room.get_state())
+            await send_to_admin(room, json.dumps(message.to_json()))
+        elif is_display:
+            room.set_display(player)
+        else:
+            player = room.add_player(player)
+            room_state = room.get_state()
+            room_state["player_id"] = player.id
+            room_state["player_name"] = player.name
+            message = Message(Subject.GAME_STATE, "ROOM_UPDATE", room_state)
+            await send_to_admin(room, json.dumps(message.to_json()))
+            await send_to_all_players(room, player, json.dumps(message.to_json()))
 
         while True:
             data = await websocket.receive_text()
-            await handle_message(data, player, room)
+            await handle_message(data, player, room, room_handler)
     except WebSocketDisconnect:
         if room.admin is not None and room.admin.id == player.id:
-            room.admin = None
-            message = Message(Subject.GAME_STATE, "ROOM_CLOSED", {})
-            await send_to_display(room, json.dumps(message.to_json()))
-            await send_to_all_players(room, player, json.dumps(message.to_json()))
-            room_handler.remove_room(room_id)
+            return
         elif room.display is not None and room.display.id == player.id:
             room.display = None
         else:

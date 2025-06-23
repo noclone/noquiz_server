@@ -1,6 +1,6 @@
 [
   {
-    "answer": "Argentina",
+    "answer": "Argentine",
     "expected_answer_type": "MCQ",
     "images": ["/static/countries/Argentina.jpg"],
     "mcq_options": ["Bhoutan", "Uruguay", "Lettonie"],
@@ -21,7 +21,7 @@
     "timer": 30
   },
   {
-    "answer": "Somalia",
+    "answer": "Somalie",
     "expected_answer_type": "MCQ",
     "images": ["/static/countries/Somalia.jpg"],
     "mcq_options": ["Sri Lanka", "Canada", "Togo"],
@@ -35,14 +35,14 @@
     "timer": 30
   },
   {
-    "answer": "SouthAfrica",
+    "answer": "Afrique du Sud",
     "expected_answer_type": "MCQ",
     "images": ["/static/countries/SouthAfrica.jpg"],
     "mcq_options": ["Irlande", "Bangladesh", "Équateur"],
     "timer": 30
   },
   {
-    "answer": "Thailand",
+    "answer": "Thailande",
     "expected_answer_type": "MCQ",
     "images": ["/static/countries/Thailand.jpg"],
     "mcq_options": ["Liban", "Kazakhstan", "Mozambique"],

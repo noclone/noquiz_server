@@ -5,9 +5,10 @@ from data_types.message import create_message, Message, Subject
 from data_types.player import Player
 from data_types.question import AnswerType
 from data_types.room import Room
+from handlers.room_handler import RoomHandler
 
 
-async def handle_message(raw, player, room):
+async def handle_message(raw, player, room, room_handler):
     data = json.loads(raw)
     message = create_message(data)
 
@@ -18,7 +19,7 @@ async def handle_message(raw, player, room):
 
     # Admin
     elif room.admin is not None and player.id == room.admin.id:
-        await handle_admin_client_message(message, room, player)
+        await handle_admin_client_message(message, room, player, room_handler)
         return
 
     # Player
@@ -93,12 +94,18 @@ async def handle_player_client_message(message: Message, room: Room, player: Pla
     print(f"Player: Unknown message: {message}")
 
 
-async def handle_admin_client_message(message: Message, room: Room, player: Player):
-    if message.subject == Subject.GAME_STATE and message.action == "START":
-        room.started = True
-        await send_to_display(room, json.dumps(message.to_json()))
-        await send_to_all_players(room, player, json.dumps(message.to_json()))
-        return
+async def handle_admin_client_message(message: Message, room: Room, player: Player, room_handler: RoomHandler):
+    if message.subject == Subject.GAME_STATE:
+        if message.action == "START":
+            room.started = True
+            await send_to_display(room, json.dumps(message.to_json()))
+            await send_to_all_players(room, player, json.dumps(message.to_json()))
+            return
+        if message.action == "DELETE_ROOM":
+            message = Message(Subject.GAME_STATE, "ROOM_CLOSED", {})
+            await send_to_display(room, json.dumps(message.to_json()))
+            await send_to_all_players(room, player, json.dumps(message.to_json()))
+            room_handler.remove_room(room.id)
 
     if message.subject == Subject.BUZZER and message.action == "RESET":
         await send_to_all_players(room, player, json.dumps(message.to_json()))

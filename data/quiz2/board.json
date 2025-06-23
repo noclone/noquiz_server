@@ -21,7 +21,7 @@
     "images": []
   },
   {
-    "difficulty": "HARD",
+    "difficulty": "MEDIUM",
     "thumbnail": "/static/random/tableau_periodic.png",
     "question": "Qui a créé le tableau périodique des éléments ?",
     "answer": "Dmitri Mendeleïev",
@@ -109,6 +109,6 @@
     "thumbnail": "/static/random/world_outline.png",
     "question": "",
     "answer": "Zimbabwe",
-    "images": ["/static/countries/zimbabwe.jpg"]
+    "images": ["/static/countries/Zimbabwe.jpg"]
   }
 ]
