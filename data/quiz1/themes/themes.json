@@ -1,7 +1,7 @@
 {
-  "histoire": "histoire.csv",
-  "sport": "sport.csv",
-  "cinema": "cinema.csv",
-  "science": "science.csv",
-  "art": "art.csv"
+  "histoire": "histoire.json",
+  "sport": "sport.json",
+  "cinema": "cinema.json",
+  "science": "science.json",
+  "art": "art.json"
 }

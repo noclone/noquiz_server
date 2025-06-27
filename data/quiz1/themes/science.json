@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Qui a inventé la première ampoule electrique ?",
+    "answer": "Thomas Edison"
+  },
+  {
+    "question": "Quelle est la molécule responsable de l'absorption de la lumière dans les plantes ?",
+    "answer": "La chlorophylle"
+  },
+  {
+    "question": "Qui a développé la théorie de la relativité générale ?",
+    "answer": "Albert Einstein"
+  },
+  {
+    "question": "Quelle est la distance entre la Terre et la lune ?",
+    "answer": "384400km"
+  },
+  {
+    "question": "Quel est l'élément chimique le plus lourd naturellement présent sur terre ?",
+    "answer": "l'uranium"
+  },
+  {
+    "question": "Qui a découvert la pénicilinne ?",
+    "answer": "Alexander Fleming"
+  },
+  {
+    "question": "Quel est le processus par lequel les cellules se divisent en 2 cellules identiques ?",
+    "answer": "la mitose"
+  },
+  {
+    "question": "Quelle unité est utilisée pour mesurer la fréquence d'une onde ?",
+    "answer": "Hertz"
+  },
+  {
+    "question": "Quel phénomène explique la déviation de la lumière lorsqu'elle traverse des milieux différents ?",
+    "answer": "réfraction"
+  },
+  {
+    "question": "Quelle est la planète la plus proche du soleil ?",
+    "answer": "mercure"
+  },
+  {
+    "question": "Quelle vitamine est principalement obtenue à partir de l'exposition au soleil ?",
+    "answer": "D"
+  },
+  {
+    "question": "Quel est le principal glucide présent dans le riz ?",
+    "answer": "Amidon"
+  },
+  {
+    "question": "Quel est le nom de la molécule qui transporte l'oxygène dans le sang ?",
+    "answer": "L'hémoglobine"
+  },
+  {
+    "question": "Quel type de roche est formé par la solidification du magma ?",
+    "answer": "Les roches ignées"
+  },
+  {
+    "question": "Quel est l'élément chimique le plus abondant dans l'univers ?",
+    "answer": "hydrogène"
+  }
+]

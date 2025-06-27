@@ -1,0 +1,158 @@
+[
+  {
+    "question": "Quel est le premier pays à avoir mis en vente l'aspirine ?",
+    "answer": "Allemagne, 1903",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Qui a chanté la chanson 'Rolling in the Deep', un succès mondial en 2010 ?",
+    "answer": "Adele",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel est ce pays ? (drapeau)",
+    "answer": "Rwanda",
+    "expected_answer_type": "NONE",
+    "images": ["https://www.larousse.fr/encyclopedie/data/images/1009579-Drapeau_du_Rwanda.jpg"]
+  },
+  {
+    "question": "Qui est l'auteur du roman Le Petit Prince ?",
+    "answer": "Antoine de Saint Exupéry",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quelle est l'étoile la plus proche du soleil ?",
+    "answer": "Proxima Centauri",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quelle est la couleur du soleil ?",
+    "answer": "Blanc",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel était le nom complet du premier film de la saga Star Wars au moment de sa sortie ?",
+    "answer": "Star Wars",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Qui a écrit la pièce de théâtre Roméo et Juliette ?",
+    "answer": "William Shakespeare",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "De quel groupe Agnetha Fältskog est-elle la chanteuse principale ?",
+    "answer": "ABBA",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel est l'évolution de Salameche ?",
+    "answer": "Reptincel",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Qui est l'auteur de la saga de fantasy Game of Thrones ?",
+    "answer": "George R. R. Martin",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Comment s'écrit le mot ... ?",
+    "answer": "coccyx",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "De quoi est mort Napoléon Bonaparte ?",
+    "answer": "Cancer de l'estomac",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel pays possède le plus de fuseaux horaires différents sur son territoire ?",
+    "answer": "France",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Que ne mange pas un végétalien ?",
+    "answer": "Tout produit d'origine animale",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Dans l'adaptation cinématographique du Seigneur des Anneaux, combien de fois Legolas s'adresse-t-il directement à Frodo ?",
+    "answer": "Une seule fois",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quelle était la distance d'arrêt mise en avant par la sécurité routière pour justifier le passage de 90 à 80 km/h sur certaines routes ?",
+    "answer": "13m",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Quel groupe de rock britannique a sorti l'album The Dark Side of the Moon en 1973 ?",
+    "answer": "Pink Floyd",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel est le titre du premier roman de la saga Harry Potter écrit par J.K. Rowling ?",
+    "answer": "Harry Potter à l'école des sorciers",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quelle était le nom de la ville aujourd'hui nommée Paris au temps des Romains ?",
+    "answer": "Lutèce",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quels animaux feulent ?",
+    "answer": "Félins",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quelle est l'unité de distance utilisée par les marins français ?",
+    "answer": "Mille nautique 1.852 km",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Dans quelle ville se déroule l'action principale du roman Les Misérables de Victor Hugo ?",
+    "answer": "Paris",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel est le titre de la chanson de Michael Jackson qui a remporté huit Grammy Awards en 1984, dont celui de la Chanson de l'année ?",
+    "answer": "Billie Jean",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Quel a été le tout premier film Disney publié ?",
+    "answer": "Blanche Neige, 1937",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Nommez un pays qui finit par la lettre O",
+    "answer": "Congo",
+    "expected_answer_type": "NONE"
+  },
+  {
+    "question": "Combien de montagnes ont leur sommet à plus de 8000 m d'altitude ?",
+    "answer": "14",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Quelle est la longueur du plus grand bateau de croisière au monde ?",
+    "answer": "365m icon of the seas",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "À quelle profondeur git le Titanic ?",
+    "answer": "-3800m",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Depuis combien de temps l'humain (homo sapiens) existe-t-il ?",
+    "answer": "~300 000 ans",
+    "expected_answer_type": "NUMBER"
+  },
+  {
+    "question": "Combien d'os dans le corps humain ?",
+    "answer": "206",
+    "expected_answer_type": "NUMBER"
+  }
+]
