@@ -1,6 +1,8 @@
 import json
 import time
 
+from starlette.websockets import WebSocketState
+
 from data_types.message import create_message, Message, Subject
 from data_types.player import Player
 from data_types.question import AnswerType
@@ -30,21 +32,25 @@ async def handle_message(raw, player, room, room_handler):
 
 async def send_to_admin(room: Room, message: str):
     if room.admin is not None:
-        await room.admin.websocket.send_text(message)
+        if room.admin.websocket.client_state == WebSocketState.CONNECTED:
+            await room.admin.websocket.send_text(message)
 
 async def send_to_display(room: Room, message: str):
     if room.display is not None:
-        await room.display.websocket.send_text(message)
+        if room.display.websocket.client_state == WebSocketState.CONNECTED:
+            await room.display.websocket.send_text(message)
 
 async def send_to_player(room: Room, player_id: str, message: str):
     player = room.players.get(player_id)
     if player:
-        await player.websocket.send_text(message)
+        if player.websocket.client_state == WebSocketState.CONNECTED:
+            await player.websocket.send_text(message)
 
 async def send_to_all_players(room: Room, self_player: Player, message: str):
     for player in room.players.values():
         if player.id != self_player.id:
-            await player.websocket.send_text(message)
+            if player.websocket.client_state == WebSocketState.CONNECTED:
+                await player.websocket.send_text(message)
 
 async def broadcast_to_room(room: Room, player: Player, message: str):
         await send_to_admin(room, message)
